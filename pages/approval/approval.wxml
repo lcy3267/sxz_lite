@@ -1,0 +1,111 @@
+<view class='tab_view'>
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="index">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            
+
+            <view wx:for="{{PjtLogList}}" wx:key="id" wx:for-item="obj" style="border-bottom: 10rpx solid #EDECE8;">
+              <navigator url='../projectdetail/projectdetail?pid={{item.projectId}}' style="line-height: 80rpx; padding-left: 20rpx; color: #E16531">{{obj.projectName}}</navigator>
+            <view class='dt_view' wx:for="{{obj.child}}" wx:key="id" wx:for-index="plindex">
+              <view class="zan-card__detail-row">
+                <view class='dt_icon_view'>
+                  <image src='{{item.avatarUrl}}' class='dt_icon'></image>
+                </view>
+                <view class="zan-card__right-col" style="margin-right: 20rpx">{{item.createTime}}</view>
+                <view class="zan-card__left-col zan-ellipsis--l2">
+                  {{item.nickName}}<view class="sxz_role">
+                    {{item.role}}
+                  </view></view>
+               
+              </view>
+              <view class='video' style='width:100%'>
+                <view class='content'>
+                  <view class='content_vi'>
+                    {{item.content}}
+                  </view>
+                </view>
+              </view>
+
+              <view class='photo_view'>
+                <view wx:for="{{item.imageNameList}}" wx:key="index" wx:for-item="imageItem">
+                  <image src='{{imageItem +PREVIEW_IMG_FIX}}' class='dddd' data-src="{{imageItem}}" data-list="{{item.imageNameList}}" bindtap='previewImage' style="width:{{winWidth3}}px;height:{{winWidth3}}px;"></image>
+                </view>
+              </view>
+              <view class='content'>
+                <navigator url='../projectdetail/projectdetail?pid={{item.projectId}}'>
+                  <!-- <view class='sxz_prjname'>
+                    <text style='float: left'>>{{item.projectName}}</text>
+                  </view> -->
+                </navigator>
+              </view>
+              <view>
+                <view class='btn_view'>
+                  <button class="zan-btn zan-btn--small zan-btn--primary" data-pid="{{item.id}}" data-pindex="{{plindex}}" bindtap='do_approve' data-atype='prjlog' data-rst="1">同意</button>
+                  <button class="zan-btn zan-btn--small" data-pid="{{item.id}}" data-pindex="{{plindex}}" bindtap='do_approve' data-atype='prjlog' data-rst="0">拒绝</button>
+                </view>
+              </view>
+            </view>
+            <view style="clear: both"></view>
+          </view>
+
+          </view>
+
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
+
+            <view style='margin-top: 0px;' wx:for="{{ProjectList}}" wx:key="id" wx:for-index="prjindex">
+              <view class="zan-card">
+                <navigator url='../projectdetail/projectdetail?pid={{item.id}}'>
+                  <!-- 卡片左侧商品图片 -->
+                  <view class="zan-card__thumb">
+                    <image class="zan-card__img" src="{{item.projectImgurl+PREVIEW_IMG_FIX}}" mode="aspectFit"></image>
+                  </view>
+                  <!-- 卡片右侧详情描述 -->
+                  <view class="zan-card__detail">
+                    <view class="zan-card__detail-row">
+                      <view class="zan-card__right-col" style='color: #ff0077;'>{{item.stage}}</view>
+                      <view class="zan-card__left-col zan-ellipsis--l2">
+                        {{item.projectName}}
+                      </view>
+                    </view>
+                    <view class="zan-card__detail-row zan-c-gray-darker">
+                      <view class="zan-card__right-col"></view>
+                      <view class="zan-card__left-col">
+                        {{item.address}}
+                      </view>
+                    </view>
+                    <!-- 商品操作按钮相关 -->
+                    <!-- <view class="zan-card__detail-row zan-c-gray-darker">
+                        <view class="zan-card__left-col zan-c-red">11</view>
+                      </view> -->
+                  </view>
+                </navigator>
+                <view class='btn_view'>
+                  <button class="zan-btn zan-btn--small zan-btn--primary" data-pid="{{item.id}}" data-pindex="{{prjindex}}" bindtap='do_approve' data-atype="prj" data-rst="1">同意</button>
+                  <button class="zan-btn zan-btn--small " data-pid="{{item.id}}" data-pindex="{{prjindex}}" bindtap='do_approve' data-atype="prj" data-rst="0">拒绝</button>
+                </view>
+              </view>
+
+
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='foot_masg'>
+    ————— 我是有底线的 —————
+  </view>
+</view>

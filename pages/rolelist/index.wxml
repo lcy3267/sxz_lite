@@ -1,0 +1,27 @@
+<view>
+  <!--
+<checkbox-group class='free-radios' bindchange="checkChange">
+              <label bindtap="click"  wx:for="{{items}}" wx:key="{{items}}"
+              class="zan-tag zan-tag--primary {{item.checked?'':'zan-tag--disabled'}}">
+                <checkbox value="{{item.id}}" name="{{item.text}}" 
+                checked="{{item.checked}}" hidden='true'></checkbox>
+                <label class="free-text">{{item.text}}</label>
+              </label>
+</checkbox-group>
+-->
+
+  <radio-group class="free-radios" bindchange="radioChange">
+    <label class="zan-tag zan-tag--primary {{item.checked?'':'zan-tag--disabled'}}" wx:for="{{items}}" wx:key="{{index}}" wx:if="{{index>0}}">
+      <radio value="{{item.id}}" name="{{item.text}}" checked="{{item.checked}}" hidden='true' />
+      <label class="free-text">{{item.text}}</label>
+    </label>
+  </radio-group>
+
+</view>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='confirmrole'>确认</button>
+    </view>
+  </view>
+</view>

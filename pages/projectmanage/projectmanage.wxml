@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class='serach_view'>
+    <view class='cell_10'></view>
+    <view class='serach_box'>
+      <icon type='search' size='15' style='margin-top: 5px;'></icon> 请输入工程名称或者编号
+    </view>
+  </view>
+  </view>
+
+
+<view class="botm_zf">
+<navigator url='../addproject/index'>
+  <view class="zf">
+    创建工程
+  </view>
+  </navigator>
+</view>

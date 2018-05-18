@@ -1,0 +1,138 @@
+page{
+background-color: #fff;
+}
+.top{
+  height: 120px;width: 100%;
+  text-align: center;
+  
+}
+.you{
+  width: 15px;height: 15px;position: absolute;margin-top: -10px;
+}
+.icon{
+  width: 60px;height: 60px;border-radius: 30px;margin-top: 20px;
+}
+.nickName{
+  font-size: 16px;margin-right: 10px;
+}
+.role{
+  font-size: 12px;margin-left: 10px;
+}
+.tovideo{
+  height: 25px;background-color: #eee;width: 90%;line-height: 25px;
+}
+.type{
+  height: 70px;width: 100%;
+  margin-top: 10px;
+  border-bottom: 1px solid #eee;
+}
+.cell3{
+  width: 33%;height: 50px;float: left;text-align: center; 
+}
+.zan{
+  font-size: 15px;
+  height: 25px;width: 100%;
+}
+.zanshu{
+  font-size: 14px;
+  height: 25px;width: 100%;
+}
+.jianjie{
+  margin-left: 10px;margin-top: 10px;font-size: 16px;height: 20px;
+}
+.remark{
+   margin-left: 10px;margin-top: 10px;font-size: 12px;margin-right: 10px;
+}
+.foot{  
+  text-align:center;
+  position: fixed;
+  bottom: 0rpx;
+  height: 45px;
+  line-height: 45px;
+  background-color: #e16531;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+}
+.foot_masg{ 
+  text-align:center;
+  font-size: 14px;color: #bfbfbf;margin-top: 10px;padding-bottom: 50px;
+  padding-top: 10px;
+}
+.swiper_box {
+  width: 100%;
+}
+
+swiper-item image {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+ 
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  color: #fff;
+  font-size: 36rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-box .wx-swiper-dot {
+  width: 19px;
+  display: inline-flex;
+  height: 4px;
+  margin-left: 0rpx;
+  justify-content: space-between;
+ 
+}
+
+.swiper-box .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 4px; 
+}
+
+.swiper-box .wx-swiper-dot-active::before {
+  background-color: #e16531;
+}
+.case{
+  margin-top: 10px;
+}
+.more{
+  float: right;margin-right: 20px;color: #dbdbdb;
+}
+.anli{
+  height: 30px;font-size: 16px;margin-left: 10px;margin-right: 10px;margin-top: 10px;
+}
+.dt_view{
+  width: 100%;
+  margin-top: 10px;
+  border-bottom: 1px solid #dbdbdb; 
+  float: left;height: auto;
+  padding-bottom: 20px;
+}
+.dt_icon{
+  width: 30px;height: 30px;border-radius: 15px;
+}
+.dt_icon_view{
+  width: 40px;float: left;height: 30px;
+  margin-left: 10px;
+}
+.content{
+font-size: 14px;margin-top: 10px;margin-left: 40px;margin-right: 10px;
+}
+.time{
+  font-size: 14px;margin-left: 40px;margin-top: 20px;
+}
+.dddd{
+  width: 60px;height: 60px;
+  float: left;margin-left: 5px;margin-top:5px;
+}
+.content_vi{
+  width: 100%;height: auto;
+}
+.photo_view{
+  margin-left: 40px;margin-right: 10px;
+  width: 100%;
+
+}

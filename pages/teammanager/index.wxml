@@ -1,0 +1,45 @@
+<view class="zan-panel">
+<navigator url='../join/join?mid=6'>
+  <view class='add_view'>
+    <view class='logo'>
+      <view class="zan-icon zan-icon-add2"></view>
+    </view>
+    <view class='title'>
+      邀请更多公司成员
+    </view>
+  </view>
+  </navigator>
+</view>
+
+
+
+<block wx:for="{{memberlist}}">
+<view class="zan-panel"  >
+  <view class='top_view'>
+    <text>{{item.role}}</text>
+  </view>
+  <view class='top_box'>
+    <view class='box_left'>
+     
+<view class="" wx:if="{{item.headImgurl && item.headImgurl != ''}}"><image src='{{item.headImgurl}}' class='logo'></image></view>
+
+<view class="" wx:else><image src='{{item.avatarUrl}}' class='logo'></image></view>   
+</view>
+    <view class='box_center' style='width:{{winWidth-160}}px'>
+      <view class='name'>{{item.nickName}}</view>
+      <view class='role'>
+        <view class="zan-tag zan-tag--warn">{{item.name}}</view>
+        <view wx:if="{{item.adminFlag}}"class="zan-tag zan-tag--warn" style='float:right;margin-right:10px'>管理员</view>
+      </view>
+    </view>
+    <view class='box_right'>
+      <view class='oper'>
+        <view wx:if="{{selfMem.adminFlag || selfMem.id==item.id}}" class="zan-icon zan-icon-setting" bindtap="memberinfo_bind" id="{{item.id}}">设置</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+
+
+

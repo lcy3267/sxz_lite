@@ -1,0 +1,2 @@
+<!--pages/error/error.wxml-->
+<text class="error">登录失败，您可能还不是该公司的成员，请联系公司管理员后去邀请码加入公司，或自己建立公司。</text>

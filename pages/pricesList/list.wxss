@@ -1,0 +1,230 @@
+page{ 
+    background-color: #F4F4F4; 
+}
+.main {
+    background-color: #F4F4F4;
+    border-top: 2rpx solid #E6E6E6;
+    min-height: 100%;
+    padding-bottom: 80rpx;
+}
+
+.tabs {
+    height: 100%;
+    position: fixed;
+    top: 2rpx;
+    bottom: 0;
+    width: 160rpx;
+    overflow-x: hidden;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-bottom: 80rpx;
+}
+
+.tabs .item {
+    height: 100rpx;
+    padding: 0 10rpx;
+    font-size: 30rpx;
+    color: #666666
+}
+
+.tabs .item.select {
+    background-color: #F4F4F4;
+    color: #FF7726;
+}
+
+.tabs .item .text {
+    width: 100%;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #E2E2E2;
+    box-sizing: border-box
+}
+
+.tabs .item .text.no_border {
+    border: none
+}
+
+.content {
+    padding: 20rpx;
+    padding-top: 0;
+    margin-left: 160rpx;
+}
+
+.content .item {
+    padding: 20rpx;
+    display: flex;
+    background: #fff;
+    margin-bottom: 1rpx;
+}
+
+.content .item .left {
+    width: 160rpx;
+    height: 160rpx;
+    position: relative;
+}
+
+.content .item .left image {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+
+.content .item .left .count_down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40rpx;
+    color: #fff;
+    font-size: 22rpx;
+    line-height: 40rpx;
+    background: rgba(255, 120, 0, 0.8);
+    overflow: hidden;
+}
+
+.content .item .left .count_down .count_down_l_1 {
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 6rpx 5rpx 0 20rpx;
+}
+
+.content .item .left .count_down .count_down_l_2 {
+    margin-left: 14rpx;
+}
+
+.content .item .left .count_down .count_down_l_1 image {
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.content .item .left .count_down .count_down_r {
+    float: left;
+}
+
+.content .item .left .count_down .count_down_r text {
+    color: #fff;
+    font-size: 22rpx;
+}
+
+.content .item .right {
+    flex: 1;
+    margin-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.content .item .right .first {
+    font-size: 28rpx;
+    height: 66rpx;
+    line-height: 33rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+    color: #222;
+}
+
+.content .item .right .first text {
+    background-color: #ff7800;
+    border-radius: 4rpx;
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    color: #fff;
+    font-size: 22rpx;
+    text-align: center;
+    line-height: 30rpx;
+    margin-right: 6rpx;
+    vertical-align: top;
+    margin-top: 0rpx;
+}
+
+.content .item .right .second {
+    padding-top: 15rpx;
+    position: relative;
+}
+
+.content .item .right .second .second-left {
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #FF7726;
+    font-weight: 500;
+    overflow: hidden
+}
+
+.content .item .right .second .second-left .old_price {
+    margin-left: 10rpx;
+    font-size: 22rpx;
+    color: #aaaaaa;
+    text-decoration: line-through
+}
+
+.content .item .right .second .second-right {
+    position: absolute;
+    z-index: 99;
+    top: -20rpx;
+    right: -30rpx;
+    width: 100rpx;
+    height: 55rpx;
+    text-align: right
+}
+
+.content .item .right .second .second-right image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 15rpx;
+    margin-right: 30rpx;
+}
+
+.content .item .right .third {
+    color: #222;
+    margin-top: 8rpx;
+    height: 30rpx;
+    width: 300rpx;
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.leimu {
+    color: #666666;
+    font-size: 26rpx;
+    line-height: 80rpx;
+}
+
+.leimu1 {
+    background: #EAEAEA;
+    text-align: left;
+    padding-left: 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    color: #000
+}
+
+.footer {
+    border-top: 1rpx solid #e6e6e6;
+    height: 80rpx;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.footer_buy {
+    width: 190rpx;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #ff7800;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

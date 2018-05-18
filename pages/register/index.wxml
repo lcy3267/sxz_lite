@@ -1,0 +1,87 @@
+<import src="/zanui/dist/field/index.wxml" />
+
+<view class="container">
+  <view class='zan-panel"'>
+  <view class='logo_view'>
+    <image src='{{photo}}' class='photo' bindtap='chooselogo'></image>
+  </view>
+  </view>
+  <view class="zan-panel">
+    <template is="zan-field" data="{{ ...config.base.name, value }}"></template>
+    <template is="zan-field" data="{{ ...config.base.shortName }}"></template>
+    <template is="zan-field" data="{{ ...config.base.provice }}"></template>
+    <template is="zan-field" data="{{ ...config.base.city }}"></template>
+    <template is="zan-field" data="{{ ...config.base.address }}"></template>
+    <template is="zan-field" data="{{ ...config.base.tel }}"></template>
+    <template is="zan-field" data="{{ ...config.base.webpage }}"></template>
+    <template is="zan-field" data="{{ ...config.base.brief }}"></template>
+  
+  
+  </view>
+</view>
+
+
+
+<form bindsubmit="showTopTips" data-loc="{{onloction}}" data-path="{{imagepath}}" bindreset="formReset" report-submit>
+  <view class="page" style="display:{{showtype1}}">
+    <view class="shuoshuotext">
+      <view class="page__bd">        
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                公司资质上传
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="page__bd">        
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                公司展示上传
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary">注册</button>
+    </view>
+  </view>
+</view>

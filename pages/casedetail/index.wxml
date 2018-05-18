@@ -1,0 +1,43 @@
+<view>
+  <view class='top'>
+    <image src='{{PromotionInfo.faceImgurl}}' class='top_image'></image>
+    <view class='title'>
+      <view class='sort_div'>
+        <image src='{{PromotionInfo.authoArvatarUrl}}' class='soct'></image>
+      </view>
+      <view class='sort_tilte_div'>
+        {{PromotionInfo.title}}
+      </view>
+      <view class='sort_tilte_div' style='font-size: 12px;'>
+        {{PromotionInfo.contractType}}/{{PromotionInfo.decorationStyle}}/{{PromotionInfo.decorationArea}}㎡
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='ms'>
+      丨描述
+    </view>
+    <view class='ms_text'>
+      {{PromotionInfo.description}}
+
+    </view>
+    <view wx:for="{{PromotionInfo.photos}}" wx:key="index" class='photos_view'>
+      <image src='{{item.photoImgurl}}' class='photos'></image>
+      <text class='description'>{{item.description}}</text>
+    </view>
+  </view>
+</view>
+
+<navigator wx:if="{{PromotionInfo.projectId}}" url="../projectdetail/projectdetail?pid={{PromotionInfo.projectId}}">
+  <view class='foot2' style='top:170px;'>
+    查看历程
+  </view>
+</navigator>
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary">免费咨询</button>
+    </view>
+  </view>
+</view>

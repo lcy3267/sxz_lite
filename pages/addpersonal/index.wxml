@@ -1,0 +1,74 @@
+<import src="/zanui/dist/switch/index.wxml" />
+<view class="zan-panel">
+  <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">成员头像</view>
+
+    <view class="zan-cell__ft" wx:if="{{!minfo.headImgurl || minfo.headImgurl == ''}}">
+      <image class='avatar' src='{{minfo.avatarUrl}}' bindtap='uplodeImage'></image>
+    </view>
+    <view class="zan-cell__ft" wx:else>
+      <image class='avatar' src='{{minfo.headImgurl}}' bindtap='uplodeImage'></image>
+    </view>
+  </view>
+  <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">昵称</view>
+    <view class="zan-cell__ft" bindtap="modalInput">{{minfo.nickName}}</view>
+  </view>
+</view>
+
+<view class="zan-panel" hidden='{{!ISADMIN}}'>
+  <view class="zan-cell zan-cell--switch">
+    <view class="zan-cell__bd">系统管理员</view>
+    <view class="zan-cell__ft">
+      <switch checked="{{minfo.adminFlag?true:false}}" bindchange="updateAdmin" />
+    </view>
+  </view>
+  <view class="zan-cell zan-cell--switch">
+    <view class="zan-cell__bd">可以在线和客户聊天</view>
+    <view class="zan-cell__ft">
+      <switch checked />
+    </view>
+  </view>
+  <view class="zan-cell zan-cell--switch">
+    <view class="zan-cell__bd">展示微官网</view>
+    <view class="zan-cell__ft">
+      <switch bindchange="switchChangeShowFlag" checked="{{showFlag}}" />
+
+    </view>
+  </view>
+</view>
+
+<view class="zan-panel">
+
+  <view class="zan-cell zan-cell--access" bindtap='to_linkziwei' data-role="{{minfo.role}}" data-mid="{{minfo.id}}">
+    <view class="zan-cell__bd">职位</view>
+    <view class="zan-cell__ft">{{minfo.role}}</view>
+  </view>
+
+  <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">手机号</view>
+
+    <view class="zan-cell__ft" bindtap="modalInputphone">
+      <text wx:if='{{minfo.phone}}'>{{minfo.phone}}</text>
+    </view>
+
+
+  </view>
+  <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">简介说明</view>
+    <view class="zan-cell__ft text" bindtap='to_linkremark' id="{{minfo.id}}" style='width:{{winWidth-110}}px'>{{minfo.resume}}</view>
+  </view>
+  <view class="button-sp-area">
+    <button type="primary" plain="true" bindtap='to_index'>设置完成</button>
+    <button wx:if="{{ISADMIN}}" type="warn" plain="true" bindtap='deleteMember'>删除员工</button>
+  </view>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="提示" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <input type='text' bindinput="nicknameInput" name="nickname" placeholder="请输入昵称" value='{{minfo.nickName}}' auto-focus/>
+</modal>
+
+
+<modal hidden="{{hiddenmodalputphone}}" title="提示" confirm-text="确定" cancel-text="取消" bindcancel="cancelphone" bindconfirm="confirmphone">
+  <input type='text' bindinput="phoneInput" name="phone" placeholder="请输入手机号" value='{{minfo.phone}}' auto-focus/>
+</modal>

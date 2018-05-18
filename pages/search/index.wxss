@@ -1,0 +1,48 @@
+.serach_view {
+  height: 55px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.serach_box {
+  text-align: left;
+  font-size: 28rpx;
+  color: #bfbfbf;
+  height: 32px;
+  background-color: #eee;
+  line-height: 32px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cell_10 {
+  height: 10px;
+}
+.weui-tab__content {
+  padding-top: 60px;
+}
+
+.zan-card {
+  background-color: #fff;margin-top: 10px;
+}
+
+zan-card__right-col {
+  color: #f07;
+}
+
+.oper {
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.cell5 {
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  font-size: 28rpx;
+}

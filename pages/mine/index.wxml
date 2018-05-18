@@ -1,0 +1,53 @@
+<view class='container'>
+  <view class='top'>
+    <view class='logo_view'>
+      <image src='{{uesrinfo.avatarUrl}}' class='logo'></image>
+    </view>
+    <view class='remark'>
+      <view style='color: #fff;'>{{uesrinfo.nickName}}</view>
+      <view class='remark_text' style='color: #eee;'>
+        这家伙很懒，没留下什么东西...
+        <navigator url='../editremark/index'>
+        <image src='{{bj}}' class='bj'></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+ <navigator url='../teamdetail/index?mid={{MEM_INFO.id}}&mname={{MEM_INFO.nickName}}'>
+  <view class='cell_top10'>
+    <text class='mg'>我的主页</text>
+    <text class='you'>〉</text>
+  </view>
+  </navigator>
+  <view class='cell_top2'>
+    <text class='mg'>当前公司</text><text class='you'>{{COM_BASE_INFO.companyName}}</text>
+  </view>
+ <navigator url='../servers/index'>
+  <view class='cell_top10'>
+    <text class='mg'>联系客服</text><text class='you'>xxx 〉</text>
+  </view>
+  </navigator>
+  <navigator url='../helper/index'>
+  <view class='cell_top2'>
+    <text class='mg'>帮助说明</text><text class='you'>〉</text>
+  </view>
+  </navigator>
+  <navigator url='../question/index'>
+  <view class='cell_top2'>
+    <text class='mg'>问题反馈</text><text class='you'>〉</text>
+  </view>
+  </navigator>
+<navigator url='../share/index'>
+  <view class='cell_top10'>
+    <text class='mg'>推荐</text><text class='you'>〉</text>
+  </view>
+  </navigator>
+  <navigator url='../guanzhu/index'>
+  <view class='cell_top2'>
+    <text class='mg'>关注</text><text class='you'>〉</text>
+  </view>
+  </navigator>
+  <view class='cell_top2'>
+    <text  bindtap='updateApp' class='mg'>更新版本</text><text class='you'>〉</text>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">怎样推广项目</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">如何删除公告</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">怎样获得管理员权限</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>

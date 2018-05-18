@@ -1,0 +1,14 @@
+<view class="container">
+<view class="zan-panel" wx:for="{{MyPromotions}}" wx:key="index">
+  <view class="zan-cell">
+    <view class="zan-cell__bd">
+      <view class="zan-icon zan-icon-contact" style='color:#e16531'></view>
+    {{item.promotionType}}</view>
+    <view class="zan-cell__ft"><view class="zan-icon zan-icon-qr" style='color:#e16531'></view>无</view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd"><view class="zan-icon zan-icon-browsing-history" style='color:#e16531'></view>浏览量：{{item.projectId}}</view><view class="zan-cell__bd"><view class="zan-icon zan-icon-phone" style='color:#e16531'></view>新客户：{{item.usedCount}}</view>
+    <view class="zan-cell__ft">{{item.createTime}}</view>
+  </view>
+</view>
+</view>

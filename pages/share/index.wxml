@@ -1,0 +1,16 @@
+<view class='box'>
+ <view class='name'>来自省心装的邀请</view>
+ <view class='img'>
+  <image src='{{code}}' class='erot'></image>
+ </view>
+ <view class='remark'>打开微信-扫一扫-省心装-关注</view>
+</view>
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button open-type='share' class="zan-btn zan-btn--primary">分享链接</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,156 @@
+<import src="/zanui/dist/switch/index.wxml" />
+<form bindsubmit="formSubmit">
+  <view class='top'>
+    <view bindtap="chooseImage">
+      <image src='{{logo}}' class='logo'></image>
+    </view>
+    <view class='title'>
+      <text>（点击设置公司LOGO）</text>
+    </view>
+  </view>
+
+  <view>
+    <view class='cell_top10'>
+      <view class='cell_left'>
+        <text class='mg'>公司名称 : </text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-100}}px'>
+        <input type="text" name="companyName" placeholder="请输入公司名称" value="{{companyInfo.companyName}}" />
+      </view>
+    </view>
+    <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>简称: </text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-100}}px'>
+        <input type="text" maxlength='4' placeholder="简称" value="{{companyInfo.shortName}}" />
+      </view>
+    </view>
+    <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>电话号码 : </text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-100}}px'>
+        <input type="text" name="phone" placeholder="请输入电话号码" value="{{companyInfo.phone}}" />
+      </view>
+    </view>
+    <view class="zan-cell zan-cell--access" style="background-color:#fff;">
+      <view class="zan-cell__bd" style='margin-left:-5px'>公司地址 :</view>
+      <view class='zan-cell__ft' style='' bindtap="chooseLocation">
+        {{companyAddress}}
+      </view>
+    </view>
+    <!-- <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>公司地址 : </text>
+      </view>
+      <view class='cell_right'>
+        <input type="text" bindtap="chooseLocation" name="companyAddress" placeholder="请选择地址" value="{{companyInfo.companyAddress}}" />
+      </view>
+    </view> -->
+    <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>公司主旨:</text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-100}}px'>
+
+
+        <input type="text" name="slogan" placeholder="公司主旨" value="{{companyInfo.slogan}}" />
+      </view>
+    </view>
+    <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>公司简介 : </text>
+      </view>
+      </view>
+    <view class='cell_textarea'>
+      
+        <textarea name="brief" style="height: 2.3em；" placeholder="公司简介" value="{{companyInfo.brief}}"  style="margin-left:10px;margin-right:10px;width:{{winWidth-20}}px;background-color: #EEEEEE;"/>
+      
+    </view>
+    
+    <view class='cell_top10'>
+      <text class='mg'>公司服务项目 </text>
+    </view>
+     <view class="page-section">
+      <view class="choseReason">
+        <view class="reasonItem" wx:for="{{serviceItem}}" data-index="{{index}}" bindtap="chooseSericeItme" style="{{index==id?'background-color: #fe4c40;color:#fff':' background-color: #efefef;' }}">
+          <view >{{item.text}}</view>
+        </view>
+      </view>
+      </view>
+    <!-- <view class='server_view'>
+      <view class='server_box'>
+        <view class='flex'>
+          <view class="zan-panel">
+            <view class="zan-cell zan-cell--last-child">
+              <view wx:for="{{serviceItem}}" wx:key="index" class="zan-tag zan-tag--danger">{{item.text}}</view>
+
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view> -->
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">公司资质照片:</view>
+              <view class="weui-uploader__info">{{imageList1.length}}/3</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files">
+                <block wx:for="{{imageList1}}" wx:for-item="image" wx:key="index">
+                  <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage1"></image>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage1"></view>
+              </view>
+            </view>
+          </view>
+          
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">公司展示照片:</view>
+              <view class="weui-uploader__info">{{imageList2.length}}/9</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files">
+                <block wx:for="{{imageList2}}" wx:for-item="image" wx:key="index">
+                  <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage2"></image>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage2"></view>
+              </view>
+            </view>
+          </view>
+          
+        </view>
+      </view>
+    </view>
+    <view class='zz_images'>
+
+    </view>
+  </view>
+  <view class='foot'>
+    <view class="">
+      <view class="zan-btns">
+        <button formType="submit" class="zan-btn zan-btn--primary">确认修改</button>
+      </view>
+    </view>
+  </view>
+</form>

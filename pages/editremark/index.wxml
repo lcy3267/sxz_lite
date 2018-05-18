@@ -1,0 +1,17 @@
+<form bindsubmit="formSubmit">
+<view class="zan-panel">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" name="resume" placeholder="请输入简介" value='{{minfo.resume}}' style="height: 8.3em；font-size: 28rpx；" />
+      <view class="weui-textarea-counter">0/30</view>
+    </view>
+  </view>
+</view>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button  formType="submit" class="zan-btn zan-btn--primary">确定</button>
+    </view>
+  </view>
+</view>
+</form>

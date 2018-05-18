@@ -1,0 +1,55 @@
+/**
+ * Created by chengyuan on 2017/11/20.
+ */
+module.exports = {
+    addIcon: [
+        'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/add_normal.png',
+        'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/add_bukedian.png'
+    ],
+    radio: {
+        cancel: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_cancel.png",
+        disabled: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_disabled.png",
+        selected: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_selected.png",
+    },
+    reduceIcon: 'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/jian_normal.png',
+    substringStr: function(title, len){
+        return title&&title.substring(0,len?len:25);
+    },
+    calculateOrderMoney: function(goods){
+        var orderMoney = 0;
+        if(goods){
+            goods.forEach(function(g){
+                if(g.select)
+                    orderMoney += getPrice(g) * g.count;
+            })
+        }
+        return formatMoney(orderMoney);
+    },
+    goodsNum: function(goods){
+        var number = 0;
+        goods.map(function(g){
+            if(g.select)
+                number += g.select
+        });
+        return number;
+    },
+    getPrice: getPrice,
+    formatMoney: formatMoney
+};
+
+function getPrice(goods){
+    return goods.price || goods.originalPrice;
+}
+//@todo wxs 中此正则不生效 待修改
+function formatMoney(money) {
+    if (money == 0) return '￥0.00';
+    //var reg = getRegExp("/\d{1,3}(?=(\d{3})+(?!\d))/", "g");
+    money = (+money).toFixed(2);
+    //money = money.replace(reg, '$&,');
+    return '￥' + money;
+}
+
+function getLen(str) {
+    var reg = getRegExp("/[^\x00-\xff]/", "g");
+    return str.replace(reg,"01").length;
+}

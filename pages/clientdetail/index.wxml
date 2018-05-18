@@ -1,0 +1,25 @@
+ <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">客户姓名</view>
+      <view class="zan-cell__ft">张先生</view>
+    </view>
+  </view>
+   <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">手机号</view>
+      <view class="zan-cell__ft">1526689266</view>
+    </view>
+  </view>
+   <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">客户来源</view>
+      <view class="zan-cell__ft">微信小程序</view>
+    </view>
+  </view>
+   <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">类型</view>
+      <view class="zan-cell__ft">目标客户</view>
+    </view>
+  </view>
+   

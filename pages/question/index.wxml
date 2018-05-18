@@ -1,0 +1,15 @@
+<view class="zan-panel">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" name="Contents" placeholder="请输入问题" style="height: 8.3em；font-size: 28rpx；" />
+      <view class="weui-textarea-counter">0/30</view>
+    </view>
+  </view>
+</view>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary">提交</button>
+    </view>
+  </view>
+</view>

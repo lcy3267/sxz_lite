@@ -1,0 +1,22 @@
+.container{
+  width: 100%;height: auto;
+}
+.top{
+  height: 150px;width: 100%;color: #fff;
+  font-size: 16px;line-height: 150px;text-align: center;
+}
+.type_view{
+  width: 100%;background-color: #fff;margin-top: 10px;
+  font-size: 14px;text-align: center;
+  }
+  .cell4{
+   width: 25%;
+  float: left;
+  height: 80px;
+  text-align: center;
+  font-size: 26rpx;
+  color: #8a8a8a;
+  }
+  .web{
+    width: 30px;height: 30px;margin-top: 10px;
+  }

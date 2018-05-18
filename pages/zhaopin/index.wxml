@@ -1,0 +1,16 @@
+<view class='box'>
+ <view class='name'>来自好运来装饰公司的邀请</view>
+ <view class='img'>
+  <image src='{{code}}' class='erot'></image>
+ </view>
+ <view class='remark'>打开微信-扫一扫-好运来装饰招聘</view>
+</view>
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button open-type='share' class="zan-btn zan-btn--primary">分享二维码</button>
+    </view>
+  </view>
+</view>

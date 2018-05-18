@@ -1,0 +1,17 @@
+.zan-tag{
+  margin-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+.foot{
+  text-align:center;
+  position: fixed;
+  height: 70px;
+  line-height: 70px;
+  background-color: #fff;
+  width: 100%;
+  font-size: 14px;
+  float: right;
+   bottom: 0px;
+}

@@ -1,0 +1,110 @@
+<view class="container">
+  <view class='top' style="background-image: url('{{bg}}')">
+    微信小程序您的营销利器
+  </view>
+  <view class='type_view'>
+    <view class="zan-panel-title">全员推广/裂变推广</view>
+    
+      <view class='cell4' bindtap='to_promotion_corpor'>
+        <view>
+          <image src='{{sm}}' class='web'></image>
+        </view>
+        <text>公司首页推广</text>
+
+      </view>
+
+    <view class='cell4'>
+      <view>
+        <image src='{{wg}}' class='web'></image>
+      </view>
+      <text>全民监工推广</text>
+
+    </view>
+    <view class='cell4' bindtap='to_promotion_project'>
+      <view>
+        <image src='{{gd}}' class='web'></image>
+      </view>
+      <text>工程推广</text>
+
+    </view>
+
+
+
+    <navigator url='../mypromotion/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{lb}}' class='web'></image>
+        </view>
+        <text>个人主页推广</text>
+
+      </view>
+    </navigator>
+    <navigator url='../zhaopin/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{web}}' class='web'></image>
+        </view>
+        <text>招聘推广</text>
+      </view>
+    </navigator>
+  </view>
+
+
+  <view class='type_view'>
+    <view class="zan-panel-title">二维码下载</view>
+    <navigator url='../promotionproject/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{sm}}' class='web'></image>
+        </view>
+        <text>关注公司二维码</text>
+
+      </view>
+    </navigator>
+    <view class='cell4'>
+      <view>
+        <image src='{{dt}}' class='web'></image>
+      </view>
+      <text>公司工程地图</text>
+
+    </view>
+    <navigator url='../zhaopin/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{web}}' class='web'></image>
+        </view>
+        <text>公司小程序</text>
+      </view>
+    </navigator>
+    <view class='cell4'>
+      <view>
+        <image src='{{sm}}' class='web'></image>
+      </view>
+      <text>工程小程序</text>
+    </view>
+  </view>
+
+  <view class='type_view'>
+    <view class="zan-panel-title">我的推广</view>
+    <navigator url='../mypromotion/index'>
+      <view class='cell4'>
+        <view>
+          <image src='/images/mark.png' class='web'></image>
+        </view>
+        <text>我的全员推广</text>
+
+      </view>
+    </navigator>
+    <navigator url='../promotionproject/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{ph}}' class='web'></image>
+        </view>
+        <text>公司数据及排行</text>
+
+      </view>
+    </navigator>
+
+
+  </view>
+</view>

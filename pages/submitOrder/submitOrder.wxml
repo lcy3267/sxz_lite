@@ -1,0 +1,67 @@
+<!--page/buy_car_y/shoping_goods.wxml-->
+<wxs src="./submitOrder.wxs" module="m1" />
+
+<view class="main">
+    <view wx:if="{{products.length == 0}}" class="no_goods">
+        <view class="car">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_none.png"/>
+        </view>
+        <view class="text">购物车空空如也</view>
+    </view>
+    <block wx:if="{{products.length !== 0}}">
+        <view wx:for="{{products}}" catchtap="jumpToDetail" data-id="{{item.id}}" wx:key="item" class="good_block {{index == 0?'first':''}}">
+            <view class="select" data-index="{{index}}" catchtap="toSelect">
+                <view class="radio_view radio_icon">
+                    <image src="{{item.select?m1.radio.selected:(item.inventory == 0 || item.status != 1?m1.radio.disabled:m1.radio.cancel)}}" />
+                </view>
+            </view>
+            <view class="img">
+                <image data-index="{{index}}" src="{{item.faceImgurl}}" mode='aspectFill'/>
+            </view>
+            <view class="content">
+                <view class="title">
+                    <text>{{item.brand+'-'+item.materialName}}</text>
+                </view>
+                <view class="reelect_view">{{item.labelName+'-'+item.mtlName+'-'+ (item.mainType==1?'主材':'辅材')}}</view>
+                <view class="content_b">
+                    <view class="price_v">
+                        <view class="price">￥{{item.price}}</view>
+                    </view>
+                    <view class="num_group" style="position: relative">
+                        <view catchtap="updateNum" data-index="{{index}}" data-type="reduce"
+                              style="position:absolute; top: 0rpx; left: -30rpx; width: 50%;height: 120%; z-index: 99; opacity: 1"></view>
+                        <view class="reduce">
+                            <image src="{{m1.reduceIcon}}"/>
+                        </view>
+                        <view class="input">{{item.count?item.count:1}}</view>
+                        <view class="add" >
+                            <image src="{{m1.addIcon[0]}}"/>
+                        </view>
+                        <view catchtap="updateNum" data-index="{{index}}" data-type="add"
+                              style="position:absolute; top: 0rpx; right: -30rpx; width: 50%; height: 120%; z-index: 99; opacity: 1"></view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </block>
+
+
+    <view class="button_fixd">
+        <view class="select" bindtap="selectAll">
+            <view class="radio_icon">
+                <image src="{{selectAll?m1.radio.selected:m1.radio.cancel}}" />
+            </view>
+            <view>全选</view>
+        </view>
+        <view class="money">
+            <text>合计: </text>
+            <text class="num">{{m1.calculateOrderMoney(products)}}</text>
+        </view>
+        <view class="button" bindtap="toClearing">去提单({{m1.goodsNum(products)}})</view>
+    </view>
+</view>
+
+
+
+

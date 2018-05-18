@@ -1,0 +1,52 @@
+<view class="main">
+    <scroll-view class="tabs" scroll-y="{{true}}" scroll-top="{{scrollTop}}" scroll-with-animation="true">
+        <block wx:for="{{labelList}}" wx:key="id" wx:for-item="label">
+            <view class="leimu1 max_one_line">{{label.setsName}}</view>
+            <view class="item {{active==label.id+'-'+item.id?'select':''}}" wx:for="{{label.materialMainTypes}}" wx:key="id"  bindtap="chooseLabel" data-label-id="{{label.id}}" data-id="{{item.id}}">
+                <view class="text {{item.active ? 'no_border' : ''}}">{{item.mtlTypeName}}</view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="content">
+        <view class="leimu">主材</view>
+        <view class="item" wx:for="{{mains}}" wx:key="id" bindtap="jumpToNext" data-id="{{item.id}}">
+            <view class="left">
+                <image src="{{item.faceImgurl}}" mode='aspectFill' />
+            </view>
+            <view class="right">
+                <view class="first">{{item.brand+' - '+item.materialName}}</view>
+                <view class="third max_one_line">{{item.description}}</view>
+                <view class="second">
+                    <view class="second-left">
+                        <text>￥{{item.price}}</text>
+                    </view>
+                    <view class="second-right" catchtap='chooseProduct' data-type="1" data-index="{{index}}">
+                        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/{{item.select?'gwc_selected':'gwc_disabled'}}.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="leimu">辅料</view>
+        <view class="item" wx:for="{{ingredients}}" wx:key="id" bindtap="jumpToNext" data-id="{{item.id}}">
+            <view class="left">
+                <image src="{{item.faceImgurl}}" mode='aspectFill' />
+            </view>
+            <view class="right">
+                <view class="first">{{item.brand+' - '+item.materialName}}</view>
+                <view class="third max_one_line">{{item.description}}</view>
+                <view class="second">
+                    <view class="second-left">
+                        <text>￥{{item.price}}</text>
+                    </view>
+                    <view class="second-right" catchtap='chooseProduct' data-type="2"  data-index="{{index}}">
+                        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/{{item.select?'gwc_selected':'gwc_disabled'}}.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view class='footer'>
+    <view class='footer_buy' bindtap='submit'>去提单</view>
+</view>

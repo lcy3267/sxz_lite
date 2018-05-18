@@ -1,0 +1,111 @@
+<view>
+  <view class='top'>
+    <image src='{{teamdetail.avatarUrl}}' class='icon'></image>
+    <view>
+      <text class='nickName'>{{teamdetail.nickName}}</text>
+      <text class='role'>{{teamdetail.role}}</text>
+    </view>
+  </view>
+  <view class='type'>
+    <view class='cell3' style='border-right:1px solid #eee;'>
+      <view class='zanshu'>
+        {{teamdetail.thumbupCount}}
+      </view>
+      <view class='zan'>
+        点赞数
+      </view>
+    </view>
+    <view class='cell3' style='border-right:1px solid #eee;'>
+      <view class='zanshu'>
+        {{teamdetail.projectCount}}
+      </view>
+      <view class='zan'>
+        项目数
+      </view>
+    </view>
+    <view class='cell3'>
+    <navigator url='{{teamdetail.classicalCount==0?"":"../teamcase/index?id={{memberid}}"}}'>
+      <view class='zanshu'>
+        {{teamdetail.classicalCount}}
+      </view>
+      <view class='zan'>
+        案例数  <image src='{{you}}' class='you'></image>
+      </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view style='width: 100%;'>
+    <view class='jianjie'>
+      丨个人简介
+    </view>
+    <view class='remark'>
+      {{teamdetail.resume}}
+    </view>
+  </view>
+  <view wx:if="{{promotions.length>0}}" style='width: 100%;'>
+    <view class='anli'>
+      <text style='float:left;'>丨精选案例</text>
+      <navigator url='../caselist/index'>
+        <text class='more'>更多</text>
+      </navigator>
+    </view>
+    <view class='case'>
+      <!--图片播放begin-->
+      <view>
+        <swiper style="height:180px;" class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{promotions}}" wx:key="*this">
+            <swiper-item>
+              <image src="{{item.faceImgurl}}" class="swiper-item" height="180" data-id="{{item.caseId}}" data-types="{{item.caseType}}" bindtap='to_datail' />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!--图片播放end-->
+    </view>
+    </view>
+    <view style='width: 100%;'>
+    <view>
+      <view class='jianjie'>
+        丨最新动态
+      </view>
+      <view class='dt_view' wx:for="{{memberlatest}}" wx:key="*this">
+        <view>
+          <view>
+            <view class='dt_icon_view'>
+              <image src='{{item.avatarUrl}}' class='dt_icon'></image>
+            </view>
+            <view class='nickName'>
+           {{item.nickName}}
+              <text style='float:right;margin-right: 10px;margin-top: 5px;font-size: 14px;'>{{item.createTime}}</text>
+            </view>
+          </view>
+          <view>
+            <view class='content'>
+              <navigator url='../videodetail/index?id={{item.projectId}}'>
+              <view class='tovideo'> 
+              <text style='float: left'>  {{item.projectName}}</text>
+              <text style='float: right'> > </text>
+              </view>
+              </navigator>
+              <view class='content_vi'>
+                {{item.content}}
+              </view>
+            </view>
+          </view>
+          <view class='photo_view'>
+            <view wx:for="{{item.photoList}}" wx:key="*this">
+              <image src='{{item.photoImgurl}}' class='dddd' data-src="{{item.photoImgurl}}" data-list="{{item.photoImgurl}}" bindtap='previewImage' style="width:{{winWidth3}}px;height:{{winWidth3}}px;"></image>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='foot_masg'>
+  ————— 我是有底线的 —————
+</view>

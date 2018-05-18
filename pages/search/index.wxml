@@ -1,0 +1,36 @@
+<view class='serach_view'>
+    <view class='cell_10'></view>
+    <view class='serach_box'>
+      <icon type='search' size='15' style='margin-top: 5px;margin-left: 5px;'></icon> 请输入工程名称或者编号
+    </view>
+  </view>
+
+  <view class="zan-card">
+                      <!-- 卡片左侧商品图片 -->
+                      <view class="zan-card__thumb">
+                        <image class="zan-card__img" src="{{uesrinfo.avatarUrl}}" mode="aspectFit"></image>
+                      </view>
+                      <!-- 卡片右侧详情描述 -->
+                      <view class="zan-card__detail">
+                        <!-- 商品标题行 -->
+                        <!-- 每行可以使用 zan-card__detail-row 来控制展示区域 -->
+                        <!-- 每行里面可以用 zan-card__left-col zan-card__right-col 来控制左右展示 -->
+                        <view class="zan-card__detail-row">
+                          <view class="zan-card__right-col" style='color: #ff0077;'>设计</view>
+                          <view class="zan-card__left-col zan-ellipsis--l2">
+                            新城市广场项目一期工程
+                          </view>
+                        </view>
+                        <!-- 商品附属信息展示行 -->
+                        <view class="zan-card__detail-row zan-c-gray-darker">
+                          <view class="zan-card__right-col"></view>
+                          <view class="zan-card__left-col">
+                            深圳市福田区998号
+                          </view>
+                        </view>
+                        <!-- 商品操作按钮相关 -->
+                        <view class="zan-card__detail-row zan-c-gray-darker">
+                          <view class="zan-card__left-col zan-c-red">浏览量：1 关注：23</view>
+                        </view>
+                      </view>
+                       </view>

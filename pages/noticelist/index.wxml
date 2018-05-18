@@ -1,0 +1,20 @@
+<view class="zan-panel" wx:for="{{list}}" wx:key="id">
+  <view class="zan-cell">
+    <view class="zan-cell__bd">
+      <view class="zan-cell__text">{{item.title}}</view>
+      <view class="zan-cell__desc">{{item.text}}</view>
+      <view class="zan-cell__desc">{{item.publisher}} 丨{{item.createTime}}</view>
+    </view>
+    <view class="zan-cell__ft" bindtap='to_manager' data-id="{{item.id}}">
+      <view class="zan-icon zan-icon-setting" style='color:#e16531'></view>
+    </view>
+  </view>
+</view>
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='to_noticeadd'>发布新公告</button>
+    </view>
+  </view>
+</view>

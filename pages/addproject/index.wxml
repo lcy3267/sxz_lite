@@ -1,0 +1,123 @@
+<import src="/zanui/dist/switch/index.wxml" />
+<form bindsubmit="formSubmit">
+  <view>
+
+    <view class='top'>
+      <view bindtap="chooseImage">
+        <image src='{{logo}}' class='logo'></image>
+      </view>
+      <view class='title'>
+        <text>工地封面：建议上传效果图</text>
+      </view>
+    </view>
+
+    <view class='cell_top10'>
+      <view class='cell_left'>
+        <text class='mg'>项目名称 : </text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-120}}px'>
+        <input type="text" name="projectName" placeholder="请输入项目名称" value="{{projectInfo.projectName}}" />
+      </view>
+    </view>
+    <view class="zan-cell zan-cell--access" style="background-color:#fff;">
+      <view class="zan-cell__bd">工程流程: </view>
+      <view class="zan-cell__ft">
+        <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ processList }}" value="{{ processIndex }}" bindchange="processChange"  range-key="processName">
+          {{ processList[processIndex].processName }}
+        </picker>
+      </view>
+    </view>
+    <view class="zan-cell zan-cell--access" style="background-color:#fff;">
+      <view class="zan-cell__bd">阶段 : </view>
+      <view class="zan-cell__ft">
+        <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ stageType }}" value="{{ stageTypeIndex }}" bindchange="stageTypeChange" range-key="stageName">
+          {{ stageType[stageTypeIndex].stageName }}
+        </picker>
+      </view>
+    </view>
+    <view class="zan-cell zan-cell--access" style="background-color:#fff;">
+      <view class="zan-cell__bd">地址 :</view>
+      <view class='zan-cell__ft' style='width:{{winWidth-80}}px' bindtap="chooseLocation">
+        {{addressDetail}}
+        <!-- <input type="text" placeholder="请输入地址" name="address" value="{{projectInfo.address}}"/>  -->
+      </view>
+    </view>
+    <view class='cell_top2'>
+      <view class='cell_left'>
+        <text class='mg'>门牌号 : </text>
+      </view>
+      <view class='cell_right' style='width:{{winWidth-120}}px'>
+        <input type="text" placeholder="请输入门牌号" name="houseNumber" value="{{projectInfo.houseNumber}}" />
+      </view>
+    </view>
+
+    <view class="zan-panel">
+
+      <view class="zan-cell zan-cell--access">
+        <view class="zan-cell__bd">房屋类型</view>
+        <view class="zan-cell__ft">
+          <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ houseType }}" value="{{ houseTypeIndex }}" bindchange="houseTypeChange">
+            {{ houseType[houseTypeIndex] }}
+          </picker>
+        </view>
+      </view>
+
+      <view class="zan-cell zan-cell--access">
+        <view class="zan-cell__bd">户型</view>
+        <view class="zan-cell__ft">
+          <picker mode="multiSelector" value="{{multiIndex}}" class="zan-field__input zan-cell__bd" range="{{ multiArray }}" bindchange="bindHouseLayoutChange">
+            {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}} {{multiArray[3][multiIndex[3]]}}
+          </picker>
+        </view>
+      </view>
+
+
+
+
+
+      <view class='cell_top2'>
+        <view class='cell_left'>
+          <text class='mg'>面积（㎡） : </text>
+        </view>
+        <view class='cell_right' style='width:{{winWidth-120}}px'>
+          <input type="number" placeholder="0" name="decorationArea" value="{{projectInfo.decorationArea}}" />
+        </view>
+      </view>
+      <view class="zan-cell zan-cell--access">
+        <view class="zan-cell__bd">装修风格</view>
+        <view class="zan-cell__ft">
+          <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ styleType }}" value="{{ styleTypeIndex }}" bindchange="styleTypeChange">
+            {{ styleType[styleTypeIndex] }}
+          </picker>
+        </view>
+      </view>
+      <view class="zan-cell zan-cell--access">
+        <view class="zan-cell__bd">装修方式</view>
+        <view class="zan-cell__ft">
+          <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ contractType }}" value="{{ contractTypeIndex }}" bindchange="contractTypeChange">
+            {{ contractType[contractTypeIndex] }}
+          </picker>
+        </view>
+      </view>
+      <view class='cell_top2'>
+        <view class='cell_left'>
+          <text class='mg'>预算（万元） : </text>
+        </view>
+        <view class='cell_right' style='width:{{winWidth-120}}px'>
+          <input type="digit" placeholder="0" name="decorationBudget" value="{{projectInfo.decorationBudget}}" />
+        </view>
+      </view>
+    </view>
+    <view class='cell80'>
+    </view>
+  </view>
+
+
+  <view class='foot'>
+    <view class="">
+      <view class="zan-btns">
+        <button formType="submit" class="zan-btn zan-btn--primary">{{btn_value}}</button>
+      </view>
+    </view>
+  </view>
+</form>

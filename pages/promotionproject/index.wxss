@@ -1,0 +1,14 @@
+.pp{
+  width:30px;
+height:90px;
+float:left;
+position:relative;
+margin-left:auto;
+margin-right:auto;
+overflow:hidden;
+background-size:cover;
+
+}
+.zan-card__left-col{
+  margin-right:0px;
+}

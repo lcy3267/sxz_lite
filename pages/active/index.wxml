@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="zan-panel">
+
+  <block wx:for="{{Promotion}}">
+    <view class="zan-card">
+      <view class='zan_l' bindtap="to_detail" id="{{item.caseId}}">
+        <image  src='{{item.faceImgurl}}?imageView2/1/w/150/h/150' class='img'></image>
+      </view>
+      <view class='zan_c' bindtap="to_detail" id="{{item.caseId}}" style='width:{{winwidth-120}}px;'>
+        <view>{{item.title}}</view>
+        <view class='des'>{{item.description}}</view>
+        <view class='auoth'>省心专享，限时1天 | {{item.createTime}}</view>
+      </view>
+      <view class='zan_r'>
+        <view class="zan-icon zan-icon-delete" style='color:#e16531' bindtap='to_delete' id="{{item.caseId}}"></view>
+        <view class="zan-icon zan-icon-edit" style='color:#e16531' bindtap='to_edit' id="{{item.caseId}}"></view>
+      </view>
+    </view>
+  </block>
+
+
+
+  </view>
+
+</view>
+
+
+
+
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <navigator url='../activeadd/index'>
+        <button class="zan-btn zan-btn--primary">创建</button>
+      </navigator>
+    </view>
+  </view>
+</view>

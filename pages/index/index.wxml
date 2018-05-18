@@ -1,0 +1,280 @@
+<view class="container">
+
+  <view class='top' style="background-image: url('{{bg}}')">
+    <view class='top_logo'>
+      <view class='top_logo_left'>
+        <view class='logo_view'>
+          <image src='{{uesrinfo.avatarUrl}}' class='logo'></image>
+        </view>
+        <view class='name_view'>
+          <view class='name_text'>{{uesrinfo.nickName}}</view>
+          <view class='start'>
+            <image src='{{start}}' class='start_logo'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='tab_view'>
+      <view class='cells_3'>
+        <view>浏览量</view>
+        <view class='tt'>
+          {{COM_BASE_INFO.pageViewCount}}
+        </view>
+      </view>
+      <navigator url='../fanslist/index'>
+        <view class='cells_3'>
+          <view>粉丝数</view>
+          <view class='tt'>
+            {{COM_BASE_INFO.fansCount}}
+          </view>
+        </view>
+      </navigator>
+      <navigator url='../mark/index'>
+        <view class='cells_3'>
+          <view>客户预约数</view>
+          <view class='tt'>
+            {{COM_BASE_INFO.appointmentCount}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='notice' bindtap='to_noticelist'>
+    <view class='notice_left'>
+      <image src='{{notice}}' class='notice_logo'></image>
+    </view>
+    <view class='notice_center' style='width: {{winWidth-120}}px;'>
+      <view class='title'>公告</view>
+      <view class='notice_remark'>走过路过不要错过，五一大促销，优惠多多，奖品丰厚，你要犹豫了，赶快加入吧</view>
+    </view>
+    <view class='notice_right'>
+      <image src='{{right}}' class='notice_logo'></image>
+    </view>
+  </view>
+
+  <view class='type_view'>
+    <navigator url='../companyinfo/index'>
+      <view class='cell4'>
+
+        <view>
+          <image src='{{infos}}' class='infos'></image>
+        </view>
+        <view>基本信息</view>
+
+      </view>
+    </navigator>
+    <navigator url='../department/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{team}}' class='infos'></image>
+        </view>
+        <view>组织架构</view>
+      </view>
+    </navigator>
+    <navigator url='../teammanager/index'>
+      <view class='cell4'>
+
+        <view>
+          <image src='{{gp}}' class='infos'></image>
+        </view>
+        <view>公司成员</view>
+
+      </view>
+    </navigator>
+    <view class='cell4' bindtap='to_active'>
+      <view>
+        <image src='{{active}}' class='infos'></image>
+      </view>
+      <view>宣传和活动</view>
+    </view>
+    <!-- <navigator url='../managerproject/index'>
+      <view class='cell4'>
+        <view>
+          <image src='{{manager}}' class='infos'></image>
+        </view>
+        <view>工程管理</view>
+      </view>
+    </navigator> -->
+    <navigator url='../caselist/index'>
+      <view class='cell4'>
+
+        <view>
+          <image src='{{case}}' class='infos'></image>
+        </view>
+        <view>精选案例</view>
+
+      </view>
+    </navigator>
+    <navigator url='../mark/index'>
+      <view class='cell4'>
+
+        <view>
+          <image src='{{mark}}' class='infos'></image>
+        </view>
+        <view>客户预约</view>
+
+      </view>
+    </navigator>
+    <view class='cell4' bindtap='to_noticelist'>
+      <view>
+        <image src='{{notice}}' class='infos'></image>
+      </view>
+      <view>公告管理</view>
+    </view>
+    <navigator url='../approval/approval'>
+      <view class='cell4'>
+        <view>
+          <image src='{{sp}}' class='infos'></image>
+        </view>
+        <view>审批</view>
+      </view>
+    </navigator>
+    <view class='cell4' bindtap='to_cms'>
+      <view>
+        <image src='{{kh}}' class='infos'></image>
+      </view>
+      <view>客户管理</view>
+    </view>
+    <view class='cell4' bindtap='to_mypromotion'>
+      <view>
+        <image src='{{yx}}' class='infos'></image>
+      </view>
+      <view>营销推广</view>
+    </view>
+    <view class='cell4' bindtap='to_sign_in'>
+      <view>
+        <image src='{{qd}}' class='infos'></image>
+      </view>
+      <view>签到</view>
+    </view>
+    <view class='cell4' bindtap='to_prices'>
+      <view>
+        <image src='{{bj}}' class='infos'></image>
+      </view>
+      <view>报价</view>
+    </view>
+    <!-- <view class='cell4' bindtap='to_prjprocess'>
+      <view>
+        <image src='{{processIcon}}' class='infos'></image>
+      </view>
+      <view>自定义阶段</view>
+    </view> -->
+  </view>
+  <view class='tag'>▎我的工程动态</view>
+  <view class='dt_view'>
+
+    <block wx:for="{{projectList}}" wx:key="index">
+      <view class="box">
+        <navigator url="../projectdetail/projectdetail?pid={{item.id}}" hover-class='none'>
+          <view class='auto_h'>
+            <view class="titles">
+              <view class="tit">设计</view>
+              <view class="tit_r">
+                {{item.projectName}}
+              </view>
+            </view>
+            <view class="tit_b">
+              <text class="ttt">浏览:{{item.pageViewCount}}</text>
+              <text class="ttt">评论:{{item.commentCount}}</text>
+              <text class="ttt">关注:{{item.fansCount}}</text>
+            </view>
+            <view class="box_">
+              <view class="box_l">
+                <image src="{{item.latestPrjlog.avatarUrl}}" class="logo1"></image>
+              </view>
+              <view class="box_r">
+                {{item.latestPrjlog.nickName}}
+              </view>
+              <view class="box_r2">
+                <!-- <view style='color: #ff0077;' wx:if="!{{item.latestPrjlog.showFlag}}">
+                审批中</view> -->
+                <text> {{item.latestPrjlog.postRelativeTime}}</text>
+              </view>
+            </view>
+            <view class="video">
+              <view class='content'>
+                <view class='con'>
+                  <text>{{item.latestPrjlog.content}}</text>
+                </view>
+              </view>
+
+              <view class='image_list' hidden='{{!item.latestPrjlog.imageNameList || item.latestPrjlog.imageNameList.length==0}}'>
+                <image src='{{IMG_BASE_URL+item.latestPrjlog.imageNameList[0]+PREVIEW_IMG_FIX}}' class="image_item"></image>
+                <image src='{{IMG_BASE_URL+item.latestPrjlog.imageNameList[1]+PREVIEW_IMG_FIX}}' hidden='!item.latestPrjlog.imageNameList[1]'
+                  class="image_item"></image>
+                <image src='{{IMG_BASE_URL+item.latestPrjlog.imageNameList[2]+PREVIEW_IMG_FIX}}' hidden='!item.latestPrjlog.imageNameList[2]'
+                  class="image_item"></image>
+              </view>
+
+            </view>
+
+            <view class="fans" hidden='{{item.fansList.length==0}}'>
+              <image src="{{item.fansList[0].avatarUrl}}" class="logo2" hidden='{{item.fansList[0].avatarUrl==null?true:false}}'></image>
+              <image src="{{item.fansList[1].avatarUrl}}" class="logo2" hidden='{{item.fansList[1].avatarUrl==null?true:false}}'></image>
+              <image src="{{item.fansList[2].avatarUrl}}" class="logo2" hidden='{{item.fansList[2].avatarUrl==null?true:false}}'></image>
+              <image src="{{item.fansList[3].avatarUrl}}" class="logo2" hidden='{{item.fansList[3].avatarUrl==null?true:false}}'></image>
+              <image src="{{item.fansList[4].avatarUrl}}" class="logo2" hidden='{{item.fansList[4].avatarUrl==null?true:false}}'></image>
+              <image src="{{item.fansList[5].avatarUrl}}" class="logo2" hidden='{{item.fansList[5].avatarUrl==null?true:false}}'></image>
+              <view class='fanstext'>等{{item.fansList.length}}位粉丝关注</view>
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+    </block>
+
+  </view>
+  <view class='tag'>▎待办任务</view>
+  <view class='rw_view'>
+    <view class='rw_box'>
+      <view class='re_auto_h'>
+        <view class="titles">
+          <view class="tits">待办</view>
+          <view class="tit_r">
+            新城市广场主体项目
+          </view>
+          <view class="zan-icon zan-icon-setting" style='color:#e16531'></view>
+        </view>
+
+        <view class='content'>
+          <view class='con'>
+            <text>任务描述任务描述任务描述任务描述任务描述</text>
+          </view>
+        </view>
+        <view class='rw_user'>
+          <text>执行人：老王</text>
+          <text style='float:right; margin-right: 10px;'>2018-10-12</text>
+        </view>
+      </view>
+    </view>
+    <view class='rw_box'>
+      <view class='re_auto_h'>
+        <view class="titles">
+          <view class="tits">待办</view>
+          <view class="tit_r">
+            新城市广场主体项目
+          </view>
+          <view class="zan-icon zan-icon-setting" style='color:#e16531'></view>
+        </view>
+        <view class='content'>
+          <view class='con'>
+            <text>任务描述任务描述任务描述任务描述任务描述</text>
+          </view>
+        </view>
+        <view class='rw_user'>
+          <text>执行人：老王</text>
+          <text style='float:right; margin-right: 10px;'>2018-10-12</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='foot_masg'>————— 我是有底线的 —————</view>
+</view>
+
+<!-- <view class='foot' style='top:30px;'>
+  <view data-pid="{{projects.id}}" bindtap="link_web">
+    微官网
+  </view>
+</view> -->

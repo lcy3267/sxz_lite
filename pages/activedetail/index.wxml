@@ -1,0 +1,15 @@
+<view>
+  <view class='top'>
+    <image src='{{PromotionInfo.faceImgurl}}' class='top_image'></image>
+  </view>
+  <view>
+    <view class='ms'>
+      {{PromotionInfo.title}}
+    </view>
+    <view class='ms_text'>
+    <view style='color:#ccc;'>活动内容：</view>
+      {{PromotionInfo.description}}
+    </view>
+  </view>
+</view>
+ 

@@ -1,0 +1,5 @@
+/* pages/updatelog/updatelog.wxss */
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #FFFFFF;
+}

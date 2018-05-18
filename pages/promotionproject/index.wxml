@@ -1,0 +1,40 @@
+<view class="container">
+
+  <view class="zan-panel">
+    <view class="zan-card">
+      <view class="pp">
+         <view class="zan-icon zan-icon-checked" style='color:#4b0;margin-top:30px;'></view>
+      </view>
+      <view class="zan-card__thumb">
+        <image class="zan-card__img"
+          src="{{uesrinfo.avatarUrl}}"
+          mode="aspectFit"
+        ></image>
+      </view>
+      <view class="zan-card__detail">
+        <view class="zan-card__detail-row">
+          <view class="zan-card__left-col">
+             新城市广场项目一期工程
+          </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+          <view class="zan-card__left-col">深圳市福田区</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='foot_masg'>
+  ————— 我是有底线的 —————
+</view>
+
+<view class='foot'>
+  <view class="">
+  <navigator url='../share/index'>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary">发起推广</button>
+    </view>
+    </navigator>
+  </view>
+</view>

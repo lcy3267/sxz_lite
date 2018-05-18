@@ -1,0 +1,9 @@
+
+.member{ height: 100rpx; line-height: 100rpx; display: flex; border-bottom: 1rpx solid #F8F8F8; padding: 0 30rpx; align-items: center;}
+.member .logo{ line-height: 0}
+.member image{ width: 80rpx; height: 80rpx; border-radius: 40rpx; background: #eee;}
+.member .name{ padding-left: 20rpx; flex: 1;}
+.member .role{ font-size: 24rpx; width: 100rpx; color: #E16531;}
+
+.modal{ width: 600rpx; background: white; border-radius: 10rpx; padding: 60rpx 50rpx; box-sizing: border-box;}
+.section__title{ margin-bottom: 20rpx; font-size: 28rpx; color: #E16531}

@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#e16531",
+  "navigationBarTitleText": "发布中心",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "zan-field": "/zanui/component/field/index"
+  }
+}

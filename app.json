@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/prj_process/list",
+    "pages/mypromotion/index",
+    "pages/register/index",
+    "pages/promotion/index",
+    "pages/promotionproject/index",
+    "pages/approvaldetail/index",
+    "pages/approval/approval",
+    "pages/projectdetail/projectdetail",
+    "pages/login/login",
+    "pages/addpersonal/index",
+    "pages/addteam/index",
+    "pages/companyinfo/index",
+    "pages/teamdetail/index",
+    "pages/addproject/index",
+    "pages/error/error",
+    "pages/manager/index",
+    "pages/webview/index",
+    "pages/projectmanage/projectmanage",
+    "pages/fans/index",
+    "pages/teammanager/index",
+    "pages/join/join",
+    "pages/prjlog/newprjlog",
+    "pages/zhaopin/index",
+    "pages/clientlist/index",
+    "pages/clientdetail/index",
+    "pages/clientadd/index",
+    "pages/active/index",
+    "pages/activeadd/index",
+    "pages/activedetail/index",
+    "pages/activeedit/index",
+    "pages/noticelist/index",
+    "pages/department/index",
+    "pages/departmentedit/index",
+    "pages/mine/index",
+    "pages/guanzhu/index",
+    "pages/share/index",
+    "pages/helper/index",
+    "pages/question/index",
+    "pages/servers/index",
+    "pages/tuiguang/index",
+    "pages/search/index",
+    "pages/noticeadd/index",
+    "pages/editremark/index",
+    "pages/fanslist/index",
+    "pages/updataproject/index",
+    "pages/managerproject/index",
+    "pages/mark/index",
+    "pages/addcase/index",
+    "pages/caseedit/index",
+    "pages/casedetail/index",
+    "pages/caselist/index",
+    "pages/rolelist/index",
+    "pages/fromtest/index",
+    "pages/logs/logs",
+    "pages/signin/signin",
+    "pages/pricesList/list",
+    "pages/submitOrder/submitOrder",
+    "pages/productDetail/productDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e16531",
+    "navigationBarTitleText": "名匠省心装公司端",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 6000
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#e16531",
+    "borderStyle": "#e6e6e6",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/homepage_fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/manager/index",
+        "iconPath": "images/group.png",
+        "selectedIconPath": "images/group_fill.png",
+        "text": "工程管理"
+      },
+      {
+        "pagePath": "pages/promotion/index",
+        "iconPath": "images/promotion.png",
+        "selectedIconPath": "images/promotion_fill.png",
+        "text": "推广"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_fill.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

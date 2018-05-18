@@ -1,0 +1,15 @@
+.list{
+  height: 60px;line-height: 60px;border-bottom: 1px solid #eee;
+}
+page{
+  background-color: #fff;
+}
+.list_l{
+  height: 45px;width: 60px;float: left;
+}
+.img{
+  width: 40px;height:40px;border-radius: 20px;margin-top: 10px;margin-left: 10px;
+}
+.list_r{
+  font-size: 14px;
+}

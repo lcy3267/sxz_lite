@@ -1,0 +1,175 @@
+<form bindsubmit="formSubmit">
+
+  <view class="zan-panel">
+
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">案例作者 : </view>
+      <view class="zan-cell__ft">
+
+        <picker
+  mode="selector"
+  class="zan-field__input zan-cell__bd"
+  range="{{ authoNickNameType }}"
+  value="{{ authoNickNameTypeIndex }}"
+  bindchange="authoNickNameChange"
+      >
+          {{ authoNickNameType[authoNickNameTypeIndex] }}
+        </picker>
+
+      </view>
+    </view>
+
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">关联项目 : </view>
+      <view class="zan-cell__ft">
+
+        <picker
+  mode="selector"
+  class="zan-field__input zan-cell__bd"
+  range="{{ projectType }}"
+  value="{{ projectTypeIndex }}"
+  bindchange="projectChange"
+      >
+          {{ projectType[projectTypeIndex] }}
+        </picker>
+
+      </view>
+    </view>
+
+  </view>
+  
+<view>
+  <view class='cell_top2'>
+    <view class='cell_left'>
+      <text class='mg'>案例标题 : </text>
+    </view>
+    <view class='cell_right' style='width:{{winWidth-120}}px'>
+      <input type="text" name="title" value="{{PromotionInfo.title}}" placeholder="请输入案例标题" />
+    </view>
+  </view>
+  <view class='cell_top2'>
+    <view class='cell_left'>
+      <text class='mg'>案例描述 : </text>
+    </view>
+    <view class='cell_right' style='width:{{winWidth-120}}px'>
+      <input type="text" name="description" value="{{PromotionInfo.description}}" placeholder="请输入描述" />
+    </view>
+  </view>
+  <view class="cell_top2">
+    <view class='cell_left'>
+      <text class='mg'>单价(/平方) :</text>
+    </view>
+    <view class='cell_right' style='width:{{winWidth-120}}px'>
+      <input type="text" name="decorationBudget" value="{{PromotionInfo.decorationBudget}}" placeholder="请输入装修单价" />
+    </view>
+  </view>
+  <view class="cell_top2">
+    <view class='cell_left'>
+      <text class='mg'>房屋面积 :</text>
+    </view>
+    <view class='cell_right' style='width:{{winWidth-120}}px'>
+      <input type="text" name="decorationArea" value="{{PromotionInfo.decorationArea}}" placeholder="请输入房屋面积" />
+    </view>
+  </view>
+  
+  <view class="zan-panel">
+
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">合同方式</view>
+      <view class="zan-cell__ft">
+
+        <picker
+  mode="selector"
+  class="zan-field__input zan-cell__bd"
+  range="{{ contractType }}"
+  value="{{ contractTypeIndex }}"
+  bindchange="onAreaChange"
+      >
+          {{ contractType[contractTypeIndex] }}
+        </picker>
+        
+      </view>
+    </view>
+
+
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">户型</view>
+      <view class="zan-cell__ft">
+
+        <picker
+  mode="selector"
+  class="zan-field__input zan-cell__bd"
+  range="{{ houseType }}"
+  value="{{ houseTypeIndex }}"
+  bindchange="houseTypehange"
+      >
+          {{ houseType[houseTypeIndex] }}
+        </picker>
+      </view>
+    </view>
+
+
+  </view>
+  <view class='cell_top10'>
+    <text class='mg'>装修风格 </text>
+  </view>
+  <view class="">
+    <view class="">
+      <radio-group class="free-radios" bindchange="radioChange">
+        <label class="zan-tag zan-tag--primary {{item.checked?'':'zan-tag--disabled'}}" wx:for="{{items}}" wx:key="{{items}}">
+          <radio value="{{item.id}}" name="{{item.text}}" checked="{{item.checked}}" hidden='true'/>
+          <label class="free-text">{{item.text}}</label>
+        </label>
+      </radio-group> 
+    </view>
+  </view>
+
+
+  <view class='zz_images'>
+    <view class="page">
+      <view class="">
+        <view class="page__bd">
+          <view class="weui-cells">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <view class="weui-uploader">
+                  <view class="weui-uploader__hd">
+                    图片上传
+                  </view>
+                  <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files">
+                      <block wx:for="{{imageList}}" wx:for-item="image">
+                        <view class="weui-uploader__file" style="position: relative;">
+                            <view class="close_image" catchtap="deleteImg" data-index="{{index}}">x</view>
+                          <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                        </view>
+                      </block>
+                    </view>
+                    <view class="weui-uploader__input-box">
+                      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view style='height:100px'>
+<text> 11</text> 
+  </view>
+</view>
+
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button formType="submit" class="zan-btn zan-btn--primary">修改</button>
+    </view>
+  </view>
+</view>
+</form>

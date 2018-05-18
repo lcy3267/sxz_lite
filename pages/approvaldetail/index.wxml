@@ -1,0 +1,39 @@
+<view class='dt_view'>
+  <view class="box">
+    <view class='auto_h'>
+      <view class="titles">
+        <view class="tit">设计</view>
+        <view class="tit_r">
+          新城市广场主体项目
+        </view>
+      </view>
+
+      <view class="box_">
+        <view class="box_l">
+          <image src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" class="logo"></image>
+        </view>
+        <view class="box_r" style="width:{{winWidth-100}}px">
+          隔壁老王 丨 装修顾问
+          <text class='datec'>2018-10-12</text>
+        </view>
+      </view>
+
+      <view>
+        <image src='https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg' class='img'></image>
+        <image src='https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg' class='img'></image>
+        <image src='https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg' class='img'></image>
+      </view>
+
+      <view class='content'>
+        <view class='con'>
+          <text>大吉大利，今晚吃鸡，预祝一切顺利，OK</text>
+        </view>
+      </view>
+      
+      <view class='btn_view'>
+        <button class="zan-btn zan-btn--small">同意</button>
+        <button class="zan-btn zan-btn--small zan-btn--primary">拒绝</button>
+      </view>
+    </view>
+  </view>
+</view>

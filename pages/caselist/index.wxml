@@ -1,0 +1,33 @@
+<block wx:for="{{Promotion}}" wx:key="index">
+  <view class='list'>
+    <view>
+      <view class='z_index'>精选</view>
+      <navigator url='../casedetail/index?id={{item.caseId}}'>
+        <image src='{{item.faceImgurl}}' class='imageurl'></image>
+        <view class='tilte'>
+          <view class='cell10'>...</view>
+          <view class='tt'>案例名称：{{item.title}}</view>
+        </view>
+      </navigator>
+      <view class='des'>
+        <button class="zan-btn zan-btn--small" bindtap='to_delete' id="{{item.caseId}}">删除</button>
+        <button class="zan-btn zan-btn--small zan-btn--primary" bindtap='to_edit' id="{{item.caseId}}">编辑</button>
+      </view>
+    </view>
+  </view>
+</block>
+<view style="height: 80px;"></view>
+<!--
+<view class='foot_masg'>
+  ————— 我是有底线的 —————
+</view>
+-->
+<navigator url='../addcase/index'>
+  <view class='foot'>
+    <view class="">
+      <view class="zan-btns">
+        <button class="zan-btn zan-btn--primary">创建案例</button>
+      </view>
+    </view>
+  </view>
+</navigator>

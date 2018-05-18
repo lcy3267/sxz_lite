@@ -1,0 +1,56 @@
+<block wx:for="{{departments}}" wx:key="subDeparmentId" wx:for-item="department" wx:for-index="i">
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        {{department.subDepartmentName}}</view>
+      <view class="zan-cell__ft" wx:if="{{department.subDeparmentId}}">
+        <view class="zan-icon zan-icon-setting" style='color:#e16531' data-value="{{department}}" bindtap='to_dep' data-index="{{i}}"></view>
+      </view>
+    </view>
+    <view wx:for="{{department.members}}" wx:key="id" class="member" data-index="{{i}}" data-id="{{item.id}}" catchtap="updateDepartment">
+      <view class="logo">
+        <image src="{{item.avatarUrl}}" />
+      </view>
+      <view class="name">{{item.name}}</view>
+      <view class="role">{{item.role}}</view>
+    </view>
+  </view>
+</block>
+
+<!-- <view class="zan-panel">
+  <view class="zan-cell">
+    <view class="zan-cell__bd">其他</view>
+  </view>
+  <view wx:for="{{companyMembers}}" wx:key="id" class="member">
+    <view class="logo">
+      <image src="{{item.avatarUrl}}" />
+    </view>
+    <view class="name">{{item.name}}</view>
+    <view class="role">{{item.role}}</view>
+  </view>
+</view> -->
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='add_dep'>创建部门</button>
+    </view>
+  </view>
+</view>
+
+<view class="screen" wx:if="{{showModal}}" catchtap="closeModal">
+  <view class="screen_bj"></view>
+  <view class="screen_main">
+    <view class="modal" catchtap="returnClose">
+      <view>
+          <view class="section__title">切换部门</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{departments}}" range-key="subDepartmentName">
+            <view class="picker">
+              选择部门：{{departments[index].subDepartmentName}}
+            </view>
+          </picker>
+          <!-- <button type="primary">确认</button> -->
+      </view>
+    </view>
+  </view>
+</view>

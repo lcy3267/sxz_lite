@@ -1,0 +1,20 @@
+<view style="background: #fff">
+    <zan-field title="标题" placeholder="请输入标题" value="{{noticeInfo.title}}" bind:change="titleChange" />
+    <zan-field title="作者" placeholder="选填" value="{{noticeInfo.publisher}}" bind:change="publisherChange"/>
+</view>
+
+<view class="zan-panel" style="margin-top: 20rpx;">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea"  placeholder="请输入公告内容" style="height: 8.3em；font-size: 28rpx；" bindinput="contentChange" value="{{noticeInfo.text}}"/>
+      <view class="weui-textarea-counter">0/30</view>
+    </view>
+  </view>
+</view>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="submit">{{noticeInfo.id?'保存修改':'发布'}}</button>
+    </view>
+  </view>
+</view>

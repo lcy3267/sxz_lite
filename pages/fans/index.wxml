@@ -1,0 +1,6 @@
+<view class='list' wx:for="{{fans}}" wx:key="index">
+ <view class='list_l'>
+ <image src='{{item.avatarUrl}}' class='img'></image>
+ </view>
+ <view class='list_r'>{{item.nickName}}</view>
+</view>

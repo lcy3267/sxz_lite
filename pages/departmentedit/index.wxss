@@ -1,0 +1,14 @@
+.cell_left{
+  width: 100px;
+  float: left;height: 50px;
+}
+.cell_right{
+  height: 50px;float:left;
+}
+input{
+  margin-top: 12px;
+  width: 100%;
+}
+.mg{
+  margin-left: 15px;
+}

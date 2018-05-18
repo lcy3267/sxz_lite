@@ -1,0 +1,7 @@
+@import '/weui.wxss';
+.weui-textarea{
+  font-size: 28rpx;
+}
+.weui-textarea-counter{
+  font-size: 24rpx;
+}

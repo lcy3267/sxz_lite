@@ -1,0 +1,21 @@
+<view class='box'>
+ <view class='name'>来自{{nickName}}的邀请码</view>
+ <view class='img'>
+  <image src='{{qrcodeUrl}}' class='erot'></image>
+ </view>
+ <view class='remark'>打开微信-扫一扫-{{joinTypeText}}</view>
+ 
+ <view class='remark'>{{joinTypeText2}}</view>
+
+</view>
+<view hidden='{{canvas_on}}'>
+  <canvas canvas-id="shareCanvas" style="width:320px;height:471px"></canvas>
+</view>
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='sendAppinment'>发送邀请图片</button>
+    </view>
+  </view>
+</view>

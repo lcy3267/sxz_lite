@@ -1,0 +1,17 @@
+<view class='cell_top10'>
+    <view class='cell_left'>
+      <text class='mg'>部门名称 : </text>
+    </view>
+    <view class='cell_right' style='width:{{winWidth-120}}px'>
+      <input type="text" bindinput="input" placeholder="{{subDepNme}}" />
+    </view>
+  </view>
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='doSubDepartment'>{{but_value}}</button>
+    </view>
+  </view>
+</view>

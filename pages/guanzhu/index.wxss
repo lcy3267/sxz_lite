@@ -1,0 +1,19 @@
+
+.box{
+  margin:20px 20px 20px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 460px;
+}
+.name{
+  font-size: 32rpx;color: #666666;border: 600;text-align: center;padding-top: 20px;
+}
+.erot{
+  width: 250px;height:250px;margin-top: 40px;
+}
+.img{
+text-align: center;
+}
+.remark{
+  font-size: 28rpx;color: #666666;border: 600;text-align: center;
+}

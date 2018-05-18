@@ -1,0 +1,140 @@
+@import '../../weui.wxss';
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.serach_view {
+  height: 55px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.serach_box {
+  text-align: center;
+  font-size: 28rpx;
+  color: #bfbfbf;
+  height: 32px;
+  background-color: #eee;
+  line-height: 32px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cell_10 {
+  height: 10px;
+}
+
+.tab_view {
+  width: 100%;
+  height: auto;
+}
+
+.page__bd {
+  height: 100%;
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  padding-top: 60px;
+}
+
+.zan-card {
+  background-color: #fff;
+}
+
+zan-card__right-col {
+  color: #f07;
+}
+
+.oper {
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.cell5 {
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  font-size: 28rpx;
+}
+
+.new {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+}
+
+.cell5_text {
+  position: absolute;
+}
+.foot_masg {
+  text-align: center;
+  font-size: 14px;
+  color: #bfbfbf;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10rpx;
+}
+.btn_view{
+  height: 50px;width: 100%;
+}
+.zan-btn{
+  margin-top: 10px; float: right;margin-left: 10px;
+}
+
+
+/* 播报审批 */
+.dt_view{
+  width: 100%;
+  margin-top: 10px;
+  border-bottom: 1px solid #dbdbdb; 
+  float: left;height: auto;
+  padding-bottom: 20px;
+}
+.dt_icon{
+  width: 28px;height: 28px;border-radius: 15px;
+}
+.dt_icon_view{
+  width: 32px;float: left;height: 28px;
+  margin-left: 10px;
+}
+.content{
+font-size: 14px;margin-top: 10px;margin-left: 20px;margin-right: 10px;float: left;align-content: left
+}
+.time{
+  font-size: 14px;margin-left: 40px;margin-top: 20px;
+}
+.dddd{
+  width: 60px;height: 60px;
+  float: left;margin-left: 5px;margin-top:5px;
+}
+.content_vi{
+  width: 100%;height: auto;
+}
+.photo_view{
+  margin-left: 20px;margin-right: 10px;float: left;
+  width: 100%;
+
+}
+
+ .sxz_role{
+   width: 60px;float: left;border: 1px solid #e16531;border-radius: 3px;text-align: center;height: 22px;
+ line-height: 22px;font-size: 14px;color: #e16531;margin-left: 2px;margin-right: 2px;margin-top: 0px;
+ }
+
+ .sxz_prjname{
+   width: 150px;
+ }
+ .nickName{
+   width: 80%;
+ }

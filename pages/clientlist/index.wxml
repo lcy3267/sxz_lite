@@ -1,0 +1,56 @@
+
+<view class="zan-panel">
+<navigator url='../clientdetail/index'>
+  <view class="zan-cell">
+    <view class="zan-cell__bd">
+      <view class="zan-icon zan-icon-contact" style='color:#e16531'></view> 张先生
+    </view>
+    <view class="zan-cell__ft"><view class="zan-tag zan-tag--warn zan-tag--plain">潜在客户</view></view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd"><view class="zan-icon zan-icon-location" style='color:#e16531'></view>来自深圳市福田区</view>
+    <view class="zan-cell__ft"><view class="zan-icon zan-icon-phone" style='color:#e16531'></view> 15263512654</view>
+  </view>
+  </navigator>
+   <view class="zan-cell">
+   <navigator url='../clientadd/index?type=edit'>
+   <button class="zan-btn zan-btn--small">编辑</button>
+    </navigator>
+   <button class="zan-btn zan-btn--small zan-btn--danger" bindtap='to_delete'>删除</button>
+   </view>
+</view>
+<view class="zan-panel">
+<navigator url='../clientdetail/index'>
+  <view class="zan-cell">
+    <view class="zan-cell__bd">
+      <view class="zan-icon zan-icon-contact" style='color:#e16531'></view> 李女士
+    </view>
+    <view class="zan-cell__ft"><view class="zan-tag zan-tag--warn zan-tag--plain">目标客户</view></view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd"><view class="zan-icon zan-icon-location" style='color:#e16531'></view>来自微信引流</view>
+    <view class="zan-cell__ft"><view class="zan-icon zan-icon-phone" style='color:#e16531'></view> 15263512654</view>
+  </view>
+   </navigator>
+  <view class="zan-cell">
+  <navigator url='../clientadd/index?type=edit'>
+   <button class="zan-btn zan-btn--small">编辑</button>
+    </navigator>
+   <button class="zan-btn zan-btn--small zan-btn--danger" bindtap='to_delete'>删除</button>
+   </view>
+</view>
+
+
+
+
+
+
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+    <navigator url='../clientadd/index?type=add'>
+      <button class="zan-btn zan-btn--primary">添加客户</button>
+      </navigator>
+    </view>
+  </view>
+</view>

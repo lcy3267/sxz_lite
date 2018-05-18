@@ -1,0 +1,292 @@
+<view class='infos' style='background-image:url("https://sxz-1255492784.image.myqcloud.com/bg.jpg")'>
+  <view class='infos_top'>
+    <view class='cells'></view>
+    <view class='liulan'>{{projects.pageViewCount}}人浏览</view>
+  </view>
+  <view class='infos_box'>
+    <view class='infos_box_title'>
+      <text style='font-size: 16px;margin-left: 20px;'>{{projects.projectName}}</text>
+    </view>
+    <view class='infos_box_title'>
+      <text style='font-size: 12px;margin-left: 20px;'>{{projects.address}}</text>
+    </view>
+    <view class='infos_box_title'>
+      <text style='font-size: 12px;margin-left: 20px;'>{{projects.houseType}} / {{projects.houseLayout}} / {{projects.decorationStyle}} / {{projects.contractType}} / {{projects.decorationArea}}㎡</text>
+      <!-- <image class="cell_rr_t" src="/imagefile/guanzhu.png" ></image> -->
+    </view>
+  </view>
+</view>
+
+<view class="top" data-list="{{projects.fansList}}" bindtap='to_fansList'>
+  <view class="cell_r" style="width:{{windowWidth-85}}px">
+    <view class="fensi">
+      <view wx:for="{{followList}}" wx:key="index">
+        <image src="{{item.avatarUrl}}" class="logo2"></image>
+      </view>
+      <view hidden='{{new_fan_on}}' style='float: left;'>
+        <image src="{{fan_on_avatarUrl}}" class="logo2"></image>
+      </view>
+      <view hidden='{{projects.fansList.length<marginleft}}' style='float: left; margin-left:1px'>...
+      </view>
+    </view>
+  </view>
+  <view class="cell_rr">
+    <view class="cell_rr_t">查看全部</view>
+    <view class="cell_rr_t">{{fansCount}}位粉丝</view>
+  </view>
+</view>
+
+<view class="top_t" bindtap='to_company'>
+  <view class="top_t_l">
+    <image src="{{company.logoImgurl}}" class="logo"></image>
+  </view>
+  <view class="top_t_c" style="width:{{windowWidth-150}}px">
+    <view class="top_t_c_t">
+      {{company.companyName}}
+    </view>
+    <view class="top_t_c_tt">点击查看公司首页</view>
+  </view>
+  <view class="top_t_r">
+    <image src="{{you}}" class="you"></image>
+  </view>
+</view>
+
+<view class="content">
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="index">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <!--ddd-->
+            <view class='jd_view'>
+              <view class='box_dot_line_' style='margin-left:{{(700/projects.stageTypeList.length)/2+20}}rpx;margin-right:{{(700/projects.stageTypeList.length)/2+20}}rpx;'>
+                <view class='box_dot_line' wx:for="{{projects.stageTypeList}}" wx:key='index'>
+                  <text class="box_dot {{projects.stageSeqno>=(index)?'actived_color':''}}"></text>
+                  <block wx:if="{{projects.stageTypeList.length!=(index+1)}}">
+                    <text class="box_line" style="width:{{(700/projects.stageTypeList.length)-17}}rpx;{{(projects.stageSeqno>index)?'border-bottom: 6rpx solid #E16531;':''}}"></text>
+                  </block>
+                </view>
+              </view>
+              <view class='box_dot_line_' style='margin-left:20rpx;margin-right:20rpx;'>
+                <view class="cont2_new" style='width:{{(700/projects.stageTypeList.length)}}rpx;' wx:for="{{projects.stageTypeList}}" wx:key='index' data-index='{{item.stageSeqno}}' bindtap='tab_click'>
+                  <view class="hold">{{item.stageName}}</view>
+                </view>
+              </view>
+
+            </view>
+            <view class="neirong">
+              <view class="neirong_">
+                <view class="neirong_ig">
+                  <image src="{{xiaoqu}}" class="xiaoqu"></image>
+                </view>
+                <view class="neirong_title">{{projects.contractType}}</view>
+                <view class="neirong_title">{{projects.decorationArea}}</view>
+                <view class="neirong_title3">{{projects.houseType}}</view>
+              </view>
+            </view>
+
+            <view class='dt_view' wx:for="{{prj_logs}}" wx:key="index">
+
+              <view class="neirong2">
+                <view class="neirong_">
+                  <view class="neirong_ig">
+                    <image src="{{item.avatarUrl}}" class="xiaoqu2"></image>
+                  </view>
+                  <view class="jz_title">
+                    <view class="neirong_title2">
+                      <text class='gw'>{{item.role}}</text>
+                    </view>
+                  </view>
+                  <view style='float:left;font-size: 15px;margin-top: 5px;margin-left: 5px;'>{{item.nickName}}<text wx:if="{{item.topFlag}}" style="font-size: 20rpx; color: #58B1D3; padding: 2rpx; border: 1rpx solid #58B1D3; margin-left: 10rpx;">置顶</text></view>
+                </view>
+                 <view wx:if="{{MEM_INFO.adminFlag||(item.memberId==MEM_INFO.id)}}" class='zan_r'  style='float:right;margin-right:10px'>
+                <!-- 置顶 -->
+                <view wx:if="{{MEM_INFO.adminFlag&&!item.topFlag}}"  class="zan-icon zan-icon-upgrade" style='color:#e16531;margin-right:10px' data-project-id="{{item.projectId}}" bindtap='to_top_prjlog' data-id="{{item.id}}" data-index="{{index}}"></view>
+                <!-- 取消置顶 -->
+                <view wx:elif="{{MEM_INFO.adminFlag&&item.topFlag}}" class="zan-icon zan-icon-exchange-record" style='color:#e16531;margin-right:10px' data-project-id="{{item.projectId}}" bindtap='to_top_prjlog' data-id="{{item.id}}" data-index="{{index}}"></view>
+
+                <view class="zan-icon zan-icon-delete" style='color:#e16531;margin-right:10px' bindtap='to_delete_prjlog' data-id="{{item.id}}" data-index="{{index}}"></view>
+        <view class="zan-icon zan-icon-edit" style='color:#e16531' bindtap='to_edit_prjlog' id="{{item.caseId}}"></view></view>
+              </view>
+              <view class='remark_view'>
+                <block wx:if="{{item.vrFlag}}">
+                  <image src='/images/vr.png' style='float:left;width:36px;height:16px;margin-top: 3px;margin-left:-12px'></image>
+                </block>
+                <view class='remark_text'>{{item.content}}</view>
+              </view>
+              <view class='image_view'>
+                <view class='image_box'>
+                  <block wx:if="{{item.vrFlag}}">
+                    <image src='{{IMG_BASE_URL+item.vrImgurl+PREVIEW_IMG_FIX}}' data-src="{{item.vrImgurl}}" bindtap='previewVr' style='width:130px;height: 130px;margin-right: 5px;'></image>
+                  </block>
+                  <block wx:if="{{!item.vrFlag}}">
+                    <block wx:for="{{item.imageNameList}}" wx:for-item="items" wx:key="index">
+                      <image src='{{items+PREVIEW_IMG_FIX}}' data-src="{{items}}" data-list="{{item.imageNameList}}" bindtap='previewImage' style='width:{{winWidth3}}px;height: {{winWidth3}}px;margin-right: 5px;'></image>
+                    </block>
+                  </block>
+                </view>
+              </view>
+
+              <view class='zan_pl_view'>
+                <view class='gn_view'>
+                  <view class='pl'>
+                    <image src='{{pl}}' class='zan' data-id="{{item.id}}" data-index="{{index}}" bindtap='pl_submit'></image>
+                  </view>
+
+                  <view class='pl'>
+
+                    <!-- <block wx:if="{{item.thumbupList.length>0}}">
+
+                        <block wx:for="{{item.thumbupList}}" wx:key="{{index}}"> -->
+                    <!-- <image src='{{zan_on}}' class='zan2' hidden='{{thumbupShowFlags[index]}}' data-id="{{thumbupIds[index]}}" data-index="{{index}}" bindtap='zan_on_submit'></image>
+                    <image src='{{zan}}' class='zan2' hidden='{{!thumbupShowFlags[index]}}' data-id="{{thumbupIds[index]}}" data-index="{{index}}" data-plid="{{item.id}}" bindtap='zan_submit'></image> -->
+                    <!-- </block>
+                      </block> -->
+                    <!-- 
+                      <block wx:if="{{item.thumbupList.length==0}}">
+
+                        <image src='{{zan_on}}' class='zan2' hidden='{{zan_btn}}' bindtap='zan_on_submit'></image>
+                        <image src='{{zan}}' class='zan2' hidden='{{!zan_btn}}' data-pid="{{item.projectId}}" data-id="{{item.id}}" bindtap='zan_submit'></image>
+                      </block> -->
+
+                  </view>
+                </view>
+              </view>
+
+              <!-- <view class='zan_view' hidden='{{!thumbupStrList[index]}}'>
+                <view class='dz_box'>
+                  <view class='dz_box_ll'>
+                    <image src='{{zan_on}}' class='zan3'></image>
+                    <text>{{thumbupStrList[index]}}</text>
+                    <text>觉得很赞</text>
+                  </view>
+                </view> -->
+                <view class='pl_box' >
+                  <view class='pl_box_ll' hidden='{{commentLists[index].length==0?true:false}}'>
+                    <view wx:for="{{commentLists[index]}}" wx:key="commentId" wx:for-index="indexson" class='commentList'>
+                      <view data-id="{{item.commentId}}" data-index="{{index}}" data-indexson="{{indexson}}" bindtap='dalete_pl'>
+                        <view>{{item.nickName}} <text wx:if="{{item.role!=null}}" style="border: 1px solid #C14511;border-radius: 3px;">{{item.role}}</text>: <text class='dsssa'>{{item.commentText}}</text></view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              
+              <view class='cells20'>...</view>
+            </view>
+
+            <view class='cells80'>...</view>
+          </view>
+
+          
+
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="zan-panel">
+            <view class="zan-row">
+              <view class="zan-col zan-col-8 zan-col-offset-3" >
+              <navigator url='../addteam/index?pid={{projects.id}}&pname={{projects.projectName}}&comId={{company.companyId}}'>
+                <button class='dp_btn' data-pid="{{projects.id}}" data-pname="{{projects.projectName}}" data-stage="{{projects.stage}}" >添加成员</button>
+                </navigator>
+              </view>
+              <view class="zan-col zan-col-8 zan-col-offset-3">
+                <navigator url='../join/join?mid={{memberId}}&type=owner&pid={{projects.id}}&pname={{projects.projectName}}'>
+                  <button class='dp_btn' data-pid="{{projects.id}}" data-pname="{{projects.projectName}}" data-cid="{{projects.companyId}}">邀请业主加入</button>
+                </navigator>
+              </view>
+            </view>
+            <!-- <view class="zan-row">
+      <view class="zan-col zan-col-12 zan-col-offset-12">offset: 12, span: 12</view>
+    </view> -->
+          </view>
+
+
+            <view class='member' wx:for="{{projectmember}}" wx:key="index">
+            <view class='zan_r' style='float:right;margin-right:10px;'>
+        <view class="zan-icon zan-icon-delete" style='color:#e16531' bindtap='to_delete_team' style='margin-right:10px;' data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}"></view>
+        <view class="zan-icon zan-icon-edit" style='color:#e16531' bindtap='to_edit' id="{{item.caseId}}"></view>
+      </view>
+              <!-- <navigator url='../teamdetail/index?mid={{item.memberId}}&mname={{item.name}}'> -->
+                <view class='team_view' bindtap="to_memberDetail" data-mid="{{item.memberId}}" data-mname="{{item.nickName}}" data-role="{{item.role}}">
+                  <view class='iico_div'>
+                    <image src='{{item.avatarUrl}}' class='iico'></image>
+                  </view>
+                  <view>
+                    <view class='nickName'>{{item.name}}</view>
+                    <view class='role'>
+                      职位：{{item.role}}
+                    </view>
+                  </view>
+                </view>
+
+            </view>
+
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <view style=' width: 100%;text-align: center;float: left;font-size: 12px;margin-top: 36px;margin-bottom: 36px;'>空空如也，快去点评吧...</view>
+            <view>
+              <button class='dp_btn' data-pid="{{projects.id}}" data-pname="{{projects.projectName}}" data-stage="{{projects.stage}}" bindtap='to_subevaluate'>邀请业主来点评</button>
+            </view>
+          </view>
+
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view class="botm">
+    <view class="botm_r" data-id="{{projects.id}}" bindtap='promotion_project'>
+      <image src="{{tg}}" class="gongdi"></image>
+      推广
+    </view>
+    <view class="botm_l">
+      <navigator url='../prjlog/newprjlog?pid={{projects.id}}&pname={{projects.projectName}}'>
+        <button class='share' style="border:none;">
+          <image src="{{gx}}" class="zixun"></image>播报</button>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+<!-- 
+<view class="botm">
+  <view class="botm_r" bindtap='tovideo'>
+    <image src="{{zixun}}" class="gongdi"></image>
+    发布播报
+  </view>
+  <view class="botm_l" data-id="{{projects.id}}" bindtap='handleConfirm'>
+    <button data-id="{{projects.id}}" class='share' style="border:none;">
+      <image src="{{gongdi}}" class="zixun"></image>推广</button>
+  </view>
+
+
+</view> -->
+
+
+
+<form bindsubmit='sub_pl'>
+  <view class='pl_div' hidden='{{pl_btn}}'>
+    <view style="height:30px;">
+      <image src='{{close}}' class='close' bindtap='to_close'></image>
+    </view>
+    <view class='remarktitle'>请在下方输入评论：</view>
+    <view style="height:40px;margin-left: 20px;margin-right: 20px;z-index:9999">
+      <textarea name="remark" placeholder='请输入...' class='remark' value='{{remark}}'></textarea>
+    </view>
+    <view class='sub_view'>
+      <button class='sub' data-id="{{logid}}" data-index="{{commontPlIndex}}" form-type='submit'>提交评论</button>
+    </view>
+  </view>
+</form>
+
+<view hidden='{{canvas_on}}'>
+  <canvas canvas-id="shareCanvas" style="width:320px;height:471px"></canvas>
+</view>

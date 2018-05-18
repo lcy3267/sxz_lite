@@ -1,0 +1,52 @@
+<view class="zan-panel">
+  <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">选择当前阶段</view>
+    <view class="zan-cell__ft"></view>
+  </view>
+</view>
+
+<form bindsubmit="showTopTips" data-loc="{{onloction}}" data-path="{{imagepath}}" bindreset="formReset" report-submit>
+  <view class="page" style="display:{{showtype1}}">
+    <view class="shuoshuotext">
+      <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="Contents" placeholder="描述信息" style="height: 8.3em；font-size: 28rpx；" />
+              <view class="weui-textarea-counter">0/200</view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary">完成</button>
+    </view>
+  </view>
+</view>

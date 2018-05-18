@@ -1,0 +1,61 @@
+<view class="zan-panel">
+<navigator url='../join/join?mid={{memberId}}&type=owner&pid={{pid}}&pname={{pname}}'>
+  <view class='add_view'>
+    <view class='logo'>
+      <view class="zan-icon zan-icon-add2"></view>
+    </view>
+    <view class='title'>
+      邀请业主加入工地
+    </view>
+  </view>
+  </navigator>
+</view>
+
+
+<view class="zan-panel" wx:for="{{needJoinMemList}}" wx:key="index">
+  <view class='top_view'>
+    <text>{{item.role}}</text>
+  </view>
+  <view class='top_box'>
+    <view class='box_left'>
+      <view class=''>
+        <image src='{{item.avatarUrl}}' class='logo'></image>
+      </view>
+    </view>
+    <view class='box_center' style='width:{{winWidth-160}}px'>
+      <view class='name'>{{item.name}}</view>
+      <view class='role'>
+        <view class="zan-tag zan-tag--warn">{{item.role}}</view>
+      </view>
+    </view>
+    <view class='box_right' bindtap="to_addTeam" data-role="{{item.role}}" data-mid="{{item.id}}" data-pid="{{pid}}">
+      <view class='oper'>
+        <view class="zan-icon zan-icon-add">添加</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="zan-panel">
+  <view class='top_view'>
+    <text>管理员</text>
+  </view>
+  <view class='top_box'>
+    <view class='box_left'>
+      <view class=''>
+        <image src='{{uesrinfo.avatarUrl}}' class='logo'></image>
+      </view>
+    </view>
+    <view class='box_center' style='width:{{winWidth-160}}px'>
+      <view class='name'>李四</view>
+      <view class='role'>
+        <view class="zan-tag zan-tag--warn">老板</view>
+      </view>
+    </view>
+    <view class='box_right'>
+      <view class='oper'>
+        <view class="zan-icon zan-icon-add">添加</view>
+      </view>
+    </view>
+  </view>
+</view> -->

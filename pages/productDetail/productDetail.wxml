@@ -1,0 +1,59 @@
+<view class="page-content">
+    <view class="cover" wx:if="{{info.faceImgurl}}">
+        <image mode="top" src="{{info.faceImgurl}}"/>
+    </view>
+    <view class='goods_warp'>
+        <view class="goods_title">
+            <text>{{info.materialName}}</text>
+            <text class="brand">{{info.brand}}</text>
+        </view>
+        <view class='goods_activity_price'>
+            <view class='goods_price'>￥{{info.price}}</view>
+        </view>
+    </view>
+    
+    <!--商品、服务 图文-->
+    <view class="goods_des_parent">
+        <view class="params">
+            <view class="label">参数说明</view>
+            <view class="content">
+                <view class="item" wx:for="{{info.params}}" wx:key="item">{{item}}</view>
+                <view style="clear: both;"></view>
+            </view>
+        </view>
+        <view class="description" wx:if="{{info.description}}">
+            <text>{{info.description}}</text>
+        </view>
+        <view wx:for="{{info.photos}}" wx:for-index="idx" wx:for-item="item">
+            <view class="goods_right_c" style="line-height: 0; margin-bottom: 16rpx;" wx:if="{{item.photoImgurl}}">
+                <image src='{{item.photoImgurl}}' data-src="{{item.photoImgurl}}" catchtap='previewGoodsImage' class="goods_images" mode='widthFix'></image>
+            </view>
+            <view class='clear'></view>
+            <view class="goods_right_b" wx:if="{{item.description}}" style="margin-bottom:24rpx;line-height:48rpx;{{info.photos[idx-1]&&info.photos[idx-1].photoImgurl?'margin-top:24rpx;':''}}">
+                <text>{{item.description}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="clearfloat"></view>
+
+    <!-- <view class='footer'>
+        <view class='footer_2'>
+            <view class='footer_index' bindtap='jumpIndex'>主页</view>
+            <view class='footer_contact'>
+                <button open-type="contact" plain="true">客服</button>
+            </view>
+            <view class='footer_buy_car' bindtap='jumpBuyCar'>
+                <view class='buy_car_name'>购物车</view>
+            </view>
+            <view class='footer_add_buy_car' bindtap='showDialog'>加入购物车</view>
+            <view class='footer_buy' bindtap='showDialog'>立即购买</view>
+        </view>
+    </view> -->
+    <view class="footer ">
+        <view class="footer_2">
+            <view class="b return_list" catchtap="jumpIndex">返回报价页</view>
+            <button class="b share_button" open-type="share">分享</button>
+        </view>
+    </view>
+
+</view>

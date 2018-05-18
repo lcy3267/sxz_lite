@@ -1,0 +1,112 @@
+<!-- <view class="zan-panel"> -->
+<!-- <view class="zan-cell zan-cell--access">
+    <view class="zan-cell__bd">选择当前阶段</view>
+    <view class="zan-cell__ft"></view>
+  </view> -->
+<form bindsubmit="submit_uptLog" data-path="{{imageList}}" >
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+
+<view class="zan-cell zan-cell--access" style="background-color:#fff;">
+      <view class="zan-cell__bd">当前工程阶段 : </view>
+      <view class="zan-cell__ft" style='width:200rpx'>
+        <picker name="stage" mode="selector" class="zan-field__input zan-cell__bd" range="{{ stageArray }}" value="{{ stageIndex }}" bindchange="stageChange">
+          {{stageArray[stageIndex]}}
+        </picker>
+      </view>
+    </view>
+
+
+
+    </view>
+    <view class="page-section">
+    <view class="page-section-title">播报内容:</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea" name="Contents" placeholder="写几句吧..." style="height: 5.3em；font-size: 28rpx；" />
+            <view class="weui-textarea-counter">0/500</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  <view class="weui-cells">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+            <view class="weui-uploader__title">全景照片:<switch name="isVr"  bindchange='switchVr'/></view>
+            <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+          </view>
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files">
+              <block wx:for="{{imageList}}" wx:for-item="image" wx:key="index">
+                <view class="weui-uploader__file" style="position: relative;">
+                  <view class="close_image" catchtap="deleteImg" data-index="{{index}}">x</view>
+                  <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage" style="background: #eee;"></image>
+                </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+          </view>
+        </view>
+        上传最多{{count[countIndex]}}张照片<text hidden='{{!percent}}'>上传进度{{percent*100}}%</text>
+        <!-- <button type="primary" loading="false" bindtap="uploadToCos">上传COS</button> -->
+      </view>
+    </view>
+  </view>
+
+</view>
+
+</view>
+
+<!-- <form bindsubmit="showTopTips" data-loc="{{onloction}}" data-path="{{imagepath}}" bindreset="formReset" report-submit>
+  <view class="page" style="display:{{showtype1}}">
+    <view class="shuoshuotext">
+      <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="Contents" placeholder="播报内容" style="height: 8.3em；font-size: 28rpx；" />
+              <view class="weui-textarea-counter">0/200</view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form> -->
+<view class='foot'>
+  <view class="">
+    <view class="zan-btns">
+      <button form-type="submit" class="zan-btn zan-btn--primary">完成</button>
+    </view>
+  </view>
+</view>
+</form>

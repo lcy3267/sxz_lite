@@ -1,0 +1,4 @@
+/* pages/error/error.wxss */
+.cerror {
+ align-content: center;
+}

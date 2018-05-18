@@ -1,0 +1,191 @@
+<import src="/zanui/dist/steps/index.wxml" />
+<form report-submit bindsubmit='sub_pl'>
+  <view class="zan-panel">
+    <view class='infos'>
+      <view class='tip'>设计</view>
+      <view class='name'> 会展中心大厦</view>
+    </view>
+    <view class='address'>深圳市福田区88号</view>
+    <view class='address'>
+      <text>浏览：2</text>
+      <text style="float:right;margin-right: 10px;color:#000">100米</text>
+    </view>
+  </view>
+  <navigator url="../fanslist/index">
+    <view class="top" data-list="{{projects.fansList}}" bindtap='to_fansList'>
+
+      <view class="cell_r" style="width:{{windowWidth-200}}px">
+        <view class="fensi">
+
+          <view class="logo2" wx:for="{{projects.fansList}}" wx:key="*this" style="margin-left: 3px;">
+            <image src="{{uesrinfo.avatarUrl}}" class="logo2"></image>
+          </view>
+          <view hidden='{{new_fan_on}}' style='float: left;'>
+            <image src="{{uesrinfo.avatarUrl}}" class="logo2"></image>
+          </view>
+          <view hidden='{{new_fan_on}}' style='float: left;'>
+            <image src="{{uesrinfo.avatarUrl}}" class="logo2"></image>
+          </view>
+          <view hidden='{{new_fan_on}}' style='float: left;'>
+            <image src="{{uesrinfo.avatarUrl}}" class="logo2"></image>
+          </view>
+        </view>
+      </view>
+      <view class="cell_rr">
+
+        <view class="cell_rr_t">查看全部</view>
+        <view class="cell_rr_t">{{projects.fansCount}}位粉丝</view>
+
+      </view>
+    </view>
+  </navigator>
+  <view class="zan-panel" style='border: none'>
+    <view class="zan-cell" style='border: none'>
+      <view class="zan-cell__bd" style='border: none'>
+        <template is="zan-steps" data="{{ type: 'horizon', steps: steps2 }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class='tab_view'>
+    <view class="page">
+      <view class="page__bd">
+        <view class="weui-tab">
+          <view class="weui-navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+              </view>
+            </block>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+          <view class="weui-tab__panel">
+            <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+              <view class="neirong2">
+                <view class="neirong_">
+                  <view class="neirong_ig">
+                    <image src="{{uesrinfo.avatarUrl}}" class="xiaoqu2"></image>
+                  </view>
+                  <view class="jz_title">
+                    <view class="neirong_title2">
+                      <text class='gw'>设计师</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+
+<view class='remark_view'>
+                  <view class='remark_text'>13131ADADDAD</view>
+                </view>
+<view class='image_view'>
+                  <view class='image_box'>
+                    <block wx:for="{{projects.prjlogs[index].previewImgurls}}" wx:key="*">
+                      <image src='{{item}}' data-src="{{item}}" data-list="{{projects.prjlogs[index].previewImgurls}}" bindtap='previewImage' style='width:{{winWidth3}}px;height: {{winWidth3}}px;margin-right: 5px;'></image>
+                    </block>
+                  </view>
+                </view>
+<view class='zan_pl_view'>
+                  <view class='gn_view'>
+                    <view class='pl'>
+                      <image src='{{pl}}' class='zan' data-id="{{item.id}}" bindtap='pl_submit'></image>
+                    </view>
+                    <view class='pl_div' hidden='{{pl_btn}}'>
+                      <view style="height:30px;">
+                        <image src='{{close}}' class='close' bindtap='to_close'></image>
+                      </view>
+                      <view style="height:60px;">
+                        <textarea name="remark" placeholder='请输入文字' class='remark'></textarea>
+                      </view>
+                      <view class='sub_view'>
+                        <button class='sub' data-id="{{logid}}" data-list="{{item.commentList}}" form-type='submit'>提交评论</button>
+                      </view>
+                    </view>
+                    <view class='pl'>
+
+                      <block wx:if="{{item.thumbupList.length>0}}">
+
+                        <block wx:for="{{item.thumbupList}}" wx:key="{{index}}">
+                          <image src='{{zan_on}}' class='zan2' hidden='{{item.customerId==customerId?false:true}}' data-id="{{item.id}}" bindtap='zan_on_submit'></image>
+                          <image src='{{zan}}' class='zan2' hidden='{{item.customerId==customerId?true:false}}' data-id="{{item.id}}" bindtap='zan_submit'></image>
+                        </block>
+                      </block>
+
+                      <block wx:if="{{item.thumbupList.length==0}}">
+
+                        <image src='{{zan_on}}' class='zan2' hidden='{{zan_btn}}' bindtap='zan_on_submit'></image>
+                        <image src='{{zan}}' class='zan2' hidden='{{!zan_btn}}' data-pid="{{item.projectId}}" data-id="{{item.id}}" bindtap='zan_submit'></image>
+                      </block>
+
+                    </view>
+                  </view>
+                </view>
+
+                <view class='zan_view'>
+                  <view class='dz_box' hidden='{{item.thumbupNickNames.length==0?true:false}}'>
+                    <view class='dz_box_ll'>
+                      <image src='{{zan_on}}' class='zan3'></image>
+                      <text wx:for="{{item.thumbupNickNames}}" wx:key="{{index}}">{{item}}，</text>
+                      <text>等觉得很赞</text>
+                    </view>
+                  </view>
+                  <view class='pl_box' hidden='{{item.commentList.length==0?true:false}}'>
+                    <view class='pl_box_ll'>
+                      <view wx:for="{{item.commentList}}" wx:key="{{index}}" class='commentList'>
+                        <view data-id="{{item.commentId}}" bindtap='dalete_pl'>
+                          <text>{{item.nickName}} : <text class='dsssa'>{{item.commentText}}</text></text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+              <view class="zan-panel">
+                <view class='top_box'>
+                  <view class='box_left'>
+                    <view class=''>
+                      <image src='{{uesrinfo.avatarUrl}}' class='logo'></image>
+                    </view>
+                  </view>
+                  <view class='box_center' style='width:{{winWidth-160}}px'>
+                    <view class='name2'>张天师</view>
+                    <view class='role'>
+                      <view class="zan-tag zan-tag--warn">设计师</view>
+                    </view>
+                  </view>
+                  <view class='box_right'>
+                    <view class='oper'>
+                      <view class="zan-icon zan-icon-delete" style="color:red" bindtap='to_delete'></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <button class='adduser'>添加成员</button>
+            </view>
+            <view class='foot_masg'>
+              ————— 我是有底线的 —————
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="botm">
+    <view class="botm_r" bindtap='tovideo'>
+      <image src="{{tg}}" class="gongdi"></image>
+      推广
+    </view>
+    <view class="botm_l">
+      <navigator url='../updataproject/index'>
+        <image src="{{gx}}" class="zixun"></image>播报
+      </navigator>
+    </view>
+
+
+  </view>
+
+
+</form>

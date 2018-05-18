@@ -1,0 +1,14 @@
+<view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">电话</view>
+      <view class="zan-cell__ft">1526859955</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">微信</view>
+      <view class="zan-cell__ft">balbala</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">QQ</view>
+      <view class="zan-cell__ft">balalal</view>
+    </view>
+  </view>

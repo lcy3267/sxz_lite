@@ -1,0 +1,16 @@
+.avatar{
+  width: 40px;height:40px;
+  border-radius: 20px;
+}
+.remark{
+  width: 80px;
+}
+.zan-cell__ft{
+  float: right;
+  text-align:right;
+  margin-left: 10px;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}

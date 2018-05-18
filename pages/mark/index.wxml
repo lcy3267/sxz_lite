@@ -1,0 +1,24 @@
+<view>
+<block wx:for="{{AppintmentList}}" wx:key='index'>
+<view class="zan-panel">
+  <view class="zan-cell">
+    <view class="zan-cell__bd">
+      <view class="zan-icon zan-icon-contact" style='color:#e16531'></view> {{item.customerName}}
+    </view>
+
+                    <view class="neirong_title2">
+                      <text >{{appType[item.type]}}</text>
+                    </view>
+
+
+    <view class="zan-cell__ft" data-phone="{{item.phone}}" bindtap="toCall"><view class="zan-icon zan-icon-phone" style='color:#e16531'></view> {{item.phone}}
+    </view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd"><view class="zan-icon zan-icon-location" style='color:#e16531'></view>{{item.mapFrom}}
+    </view>
+    <view class="zan-cell__ft">{{item.createTime}}</view>
+  </view>
+</view>
+</block>
+</view>

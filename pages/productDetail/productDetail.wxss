@@ -1,0 +1,262 @@
+page{
+  background-color: #fff;
+} 
+.page-content{ 
+  background-color: #fff;
+  border-top:1rpx solid #e6e6e6;
+  padding-bottom: 100rpx;
+} 
+.goods_title{
+  font-size: 40rpx;
+  color: #222;
+  padding: 20rpx 30rpx;
+  line-height: 56rpx;
+  font-weight: 500;
+  word-break:break-all; 
+}
+
+
+.goods .goods_row{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  padding-left:30rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  padding-bottom:38rpx;
+  margin-bottom: 38rpx;
+}
+.goods .goods_row:last-of-type{
+  border-bottom:0;
+  margin-bottom: 0;
+}
+.goods .goods_row .goods_left{
+  margin-right: 27rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #eee;
+  border-radius: 50%;
+  overflow: hidden;  
+}
+.goods .goods_row .goods_left image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.goods .goods_row .goods_right{
+  flex:1;
+  width: 500rpx;
+  padding-left: 24rpx;
+}
+
+.goods .goods_row .goods_right .goods_right_b{
+  padding-right: 20rpx;
+  word-break:break-all;
+}
+.goods .goods_row .goods_right .goods_right_b .goods_right_b_l{
+  float: left;
+  width: 400rpx;
+  margin-left: -24rpx;
+}
+.goods .goods_row .goods_right .goods_right_b .goods_right_b_l .shop_name{
+  font-size: 26rpx;
+  color: #667494;
+  line-height: 26rpx;
+  margin-bottom: 10rpx;
+  width: 420rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;  
+  font-weight: 500;
+  word-break:break-all;
+}
+.goods .goods_row .goods_right .goods_right_b .goods_right_b_l .shop_time{
+  font-size: 24rpx;
+  color: #888;
+  line-height: 24rpx;
+}
+.goods .goods_row .goods_right .goods_right_c{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 60rpx;
+  margin-bottom: 10rpx;
+  float: left;
+}
+.goods .goods_row .goods_right .goods_right_c .goods_images{
+  width: 700rpx;
+  margin-left: -110rpx;
+  margin-bottom: 20rpx;
+  background-color: #eee;
+}
+.goods .goods_row .goods_right .goods_right_c .goods_image{
+  width: 360rpx;
+  height: 360rpx;
+  margin-bottom:10rpx;
+  background-color: #eee;
+}
+.goods .goods_row .goods_right .goods_right_d{
+  margin-top:20rpx;
+  margin-left: -100rpx;  
+}
+.goods .goods_row .goods_right .goods_right_d .goods_payment{
+  float:right;
+  border:1px solid #97aad0;
+  border-radius: 10rpx;
+  font-size:26rpx;
+  color: #667494;
+  line-height: 60rpx;
+  width: 250rpx;
+  text-align: center;
+}
+.page-content .goods_activity_price{
+  overflow: hidden;
+  padding-left: 26rpx;
+  padding-right: 31rpx;
+}
+.page-content .goods_activity_price .goods_price{
+  float: left;
+  color: #ff7800;
+  font-weight: 500;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  margin-right: 21rpx;
+}
+.page-content .footer{
+  border-top: 1rpx solid #e6e6e6;
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+.page-content .footer .footer_1, .page-content .footer .footer_2{
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+.page-content .footer .footer_1 .footer_l, .page-content .footer .footer_1 .footer_r{
+  width: 50%;
+}
+.page-content .footer .footer_1 .footer_l{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.page-content .footer .footer_1 .footer_l .footer_index{
+  border-right: 1rpx solid #e2e2e2;
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/home.png) center 22rpx / 44rpx no-repeat;
+}
+.page-content .footer .footer_1 .footer_l .footer_kf button{
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/weixin.png) center 22rpx / 44rpx no-repeat;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding-top:64rpx;
+  height: 100%;
+  line-height: normal;
+}
+.page-content .footer .footer_1 .footer_l .footer_kf button::after{
+  border: 0;
+}
+.page-content .footer .footer_1 .footer_r{
+  background-color: #ff7800;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}
+.page-content .footer .footer_1 .footer_r_disabled{
+  background-color: #ddd;
+}
+.page-content .footer .footer_2 .footer_contact button, .page-content .footer .footer_2 .footer_index, .page-content .footer .footer_2 .footer_buy_car{
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/weixin.png) center top / 44rpx no-repeat;
+  color: #555;
+  font-size: 20rpx;
+  margin-top: 13rpx; 
+  padding-top: 53rpx;
+  line-height: 20rpx;
+  text-align: center;
+  width: 44rpx;
+  margin-left: 54rpx;
+}
+.page-content .footer .footer_2 .footer_contact button{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: 13rpx; 
+  padding-top: 53rpx;
+  margin-left: 34rpx;
+}
+.page-content .footer .footer_2 .footer_index{
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/home.png) center top / 44rpx no-repeat;
+  margin-left: 34rpx;
+}
+.page-content .footer .footer_2 .footer_buy_car{
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gouwuc.png) center top / 44rpx no-repeat;
+  margin-left: 43rpx;
+  position: relative;
+  width: 60rpx;
+}
+.page-content .footer .footer_2 .footer_buy_car .buy_car_num_1{
+  position: absolute;
+  left: 34rpx;
+  bottom: 50rpx;
+  background-color: #f43530;
+  height: 34rpx;
+  line-height: 34rpx;
+  width: 34rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 50%;
+}
+.page-content .footer .footer_2 .footer_buy_car .buy_car_num_2{
+  border-radius: 20rpx;
+  padding: 0 8rpx;
+  width: auto;
+}
+.page-content .footer .footer_2 .footer_add_buy_car, .page-content .footer .footer_2 .footer_buy{
+  width: 190rpx;
+  height: 72rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  border: 2rpx solid #ff7800;
+  color: #fff;
+  background-color: #ff7800;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+.page-content .footer .footer_2 .footer_add_buy_car{
+  background-color: #fff;
+  color: #ff7800;
+  margin-left: 40rpx;
+}
+.page-content .footer .footer_2 .footer_buy{
+  margin-left: 20rpx;
+}
+.goods_des_parent{margin:30rpx 0 0 30rpx;}
+.goods_des_parent image{width:690rpx; background: #eee;}
+.goods_des_parent .goods_right_b{width:690rpx; font-size: 32rpx; color: #666}
+.cover{ line-height: 0}
+.cover image{ width: 100%; height: 600rpx; background: #eee;}
+.brand{ color: #666; font-size: 26rpx; margin-left: 20rpx;}
+
+.params{margin-bottom: 30rpx;}
+.params .label{ font-size: 28rpx; margin-bottom: 10rpx;}
+.params .content{ font-size: 26rpx; color: #666; width: 100%}
+.params .content .item{ float: left; width: 33.33%; line-height: 50rpx;}
+
+.description{ font-size: 30rpx; margin-bottom: 30rpx;}
+
+.footer .b{ flex: 1; line-height: 100rpx; text-align: center; font-size: 32rpx; color: #fff;}
+.footer .return_list{ background: #FAAC2A}
+.footer .share_button{ background: #F87913}
+
+button{ background: #fff; margin: 0; padding: 0; border-radius: 0;}
+button::after{ border: 0}
